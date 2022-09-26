@@ -2,41 +2,44 @@
 #include<stdlib.h>
 #include<stdio.h>
 
-int place_words(char arr[], int count, char *argv[]){
+int place_words(char arr[], int word_count, FILE* odd_file, FILE* even_file){
 	 
 	int i;	
-	FILE* even_file;
-	FILE* odd_file;
 	char space[]=" ";
 	
-	even_file = fopen(argv[3], "w");
-	odd_file = fopen(argv[2], "w");
-
-	for(i=1; arr[i] != '\0'; i++){
+	for(i=0; arr[i] != '\0'; i++){
 		
-		if (arr[i] != ' ' && count % 2 == 0){
+		if (arr[i] != ' ' && (word_count % 2) == 0){
 			fputc(arr[i], odd_file);
 		}
 		
-		if (arr[i+1] != ' ' && count % 2 != 0){
+		if (arr[i] != ' ' && (word_count % 2) != 0){
 			fputc(arr[i], even_file);
 		}
-		if(arr[i+1] == ' '){
-			count++;
+		if(arr[i] == ' ' && arr[i+1] != ' '){
+			word_count++;
 			fputc(space[0], even_file);
 			fputc(space[0], odd_file);
 		}
 	}
 
-	fclose(even_file);
-	fclose(odd_file);
-	return count;
+	return word_count;
 }
 
 void segregate_words(char arr[], FILE* ptr, char *argv[]){
 
-	int count=0;
+	int word_count=0;
+	
+	FILE* even_file;
+        FILE* odd_file;
+ 
+ 	even_file = fopen(argv[3], "w");
+	odd_file = fopen(argv[2], "w");
+
 	while (fgets(arr, MAX_LINE_LENGTH, ptr)){
-		count += place_words(arr, count, argv); 
+		word_count += place_words(arr, word_count, odd_file, even_file); 
 	}
+
+	fclose(even_file);
+	fclose(odd_file);
 }
