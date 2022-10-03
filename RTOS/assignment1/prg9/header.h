@@ -11,5 +11,5 @@ typedef struct student {
 	subjects subject;
 }students;
 
-void get_data(students student[], int student_count);
-void display_data(char branch[], char name[], int id);
+int get_data(students student[], int student_count, int* qualifying_candidates);
+void display_result(students student[], int* qualifying_candidates, int qualifying_count);

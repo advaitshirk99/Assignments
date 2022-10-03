@@ -2,14 +2,9 @@
 #include "header.h"
 #include<stdlib.h>
 
-void display_data(char branch[], char name[], int id){
+int get_data(students student[], int student_count, int* qualifying_candidates){
 
-	printf("%s\t%s\t%d\n", branch, name, id);
-}
-
-void get_data(students student[], int student_count){
-
-	int i, k, qualifying_students[student_count], total_eligible =0;
+	int i, k=0, qualifying_students[student_count], eligible_candidates=0;
 	for (i=0; i<student_count; i++){
 		
 		printf("Enter the details of student%d:\n",i+1);
@@ -28,22 +23,29 @@ void get_data(students student[], int student_count){
 
 			if (student[i].subject.subject_marks[j] > 80) count++;
 		}
-		
+		printf("\n");
+
 		if (count ==5){ 
 			//Use a pointer here, point it to the count and qualifying_students. Then return it from this function to the main, and pass it to the display function, again in main.
-			total_eligible++;
 			qualifying_students[k++] = i;
+			eligible_candidates++;
 		}
 	}
 	printf("\n");
+	
+	qualifying_candidates = qualifying_students;
+
+	return eligible_candidates;
 }
 
-void display_data(students student[], int ){
+void display_result(students student[], int* qualifying_candidates, int qualifying_count){
 
 	int i;
-	for (i=0; i<student_count; i++){
-		
-		printf("Details of the qualifying students:\n");
+	printf("Details of the qualifying students are:\n");
+	
+	for (i=0; i<qualifying_count; i++){
 			
-	}
+		printf("Branch: %s\tName: %s\tID: %d\n", student[*(qualifying_candidates+i)].branch, student[*(qualifying_candidates+i)].name, student[*(qualifying_candidates+i)].id);
+		}
 }
+
