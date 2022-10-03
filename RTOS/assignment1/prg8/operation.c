@@ -2,10 +2,6 @@
 #include<stdlib.h>
 #include "header.h"
 
-typdef struct array{
-int* arr;
-}array;
-
 int** get_arrays(int total_size){
 		
 	int arr[total_size];	//to store the sizes of all arrays
@@ -16,7 +12,9 @@ int** get_arrays(int total_size){
 	//Creating an array of pointers, so every index can store one address 
 	int* array_ptr[total_size];
 	int i, j;
-
+	
+	array all_arr[total_size];
+	//Try to store all the elements in all_arr[0], etc, and then point array_ptr, and change its int type to 'array'
 	for (i=0; i<total_size; i++){
 	
 		int size_of_array;

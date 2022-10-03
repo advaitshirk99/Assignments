@@ -11,7 +11,7 @@ void store_string(FILE* ptr){
 	fgets(sentence, MAX_STRING_LENGTH, stdin);
 	int i=0;
 	//char c = getchar()
-	while(sentence[i] != '\n'){
+	while(sentence[i] != 0x0A){
 	
 		fputc(sentence[i], ptr);
 		i++;

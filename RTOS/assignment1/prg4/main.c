@@ -40,7 +40,7 @@ int main(){
 	int *final_result, *result;
 	result = malloc(2 * sizeof(int));
 	final_result = give_lines(line, ptr, result);	
-	printf("Line count: %d\nWord Count: %d\n", result[0], result[1]);
+	printf("Line count: %d\nWord Count: %d\n", final_result[0], final_result[1]);
 	
 	free(result);
 	return 0; 
