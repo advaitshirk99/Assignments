@@ -1,40 +1,57 @@
 #include<stdio.h>
-#include<stdlib.h>
 #include "header.h"
 
-int** get_arrays(int total_size){
-		
-	int arr[total_size];	//to store the sizes of all arrays
-	int* all_sizes = arr;
+void get_data(int data_array[][1000], int size_array[], int array_count){
 
-	int** total_ptr = (int**)malloc(total_size * sizeof(int));
-
-	//Creating an array of pointers, so every index can store one address 
-	int* array_ptr[total_size];
 	int i, j;
-	
-	array all_arr[total_size];
-	//Try to store all the elements in all_arr[0], etc, and then point array_ptr, and change its int type to 'array'
-	for (i=0; i<total_size; i++){
-	
-		int size_of_array;
-		printf("Enter the size of Array%d:\n", i+1);
-		scanf("%d", &size_of_array);
-		
-		arr[i] = size_of_array;
-		total_ptr = &array_ptr[i];
-		total_ptr++;
-		
-		for (j=0; j<size_of_array; j++){
-		
-			printf("Enter the elements of the array:\n");
-			scanf("%d", array_ptr[i]+j);	
+
+	for (i=0; i<array_count; i++){
+
+	        printf("\nEnter the elements of array%d:\n", i+1);
+
+		for (j=0; j<size_array[i]; j++){
+			
+			scanf("%d", &data_array[i][j]);
 		}
 	}
-	
-	//for storing the array of sizes
-	total_ptr++;
-	total_ptr = &all_sizes;
-
-	return total_ptr;	
 }
+
+void display_result(int data_array[][1000], int size_array[], int array_count){
+
+	int i, j;
+	for(i=0; i<array_count; i++){
+		
+		int k=0, l=0, even[size_array[i]], odd[size_array[i]];
+
+		for (j=0; j<size_array[i]; j++){
+			
+			if (data_array[i][j] % 2 ==0){
+				
+				even[k++] = data_array[i][j];
+			}
+
+			else{
+			
+				odd[l++] = data_array[i][j];
+			}
+				
+		}
+		k--;
+		l--;
+		
+		printf("Even elements of Array%d are:\n", i+1);
+		while (k >= 0){ 
+
+			printf("%d ", even[k--]);
+		}
+		printf("\n");
+
+		printf("Odd elements of Array%d are:\n", i+1);
+		while (l >= 0){
+			
+			printf("%d ", odd[l--]);
+		}
+		printf("\n\n");
+	}
+}
+
