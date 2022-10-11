@@ -1,60 +1,67 @@
 #include<stdio.h>
-#include<string.h>
 #include "header.h"
 #include<stdlib.h>
+#include<ctype.h>
+#include<string.h>
 
-void write_word(char arr[], char* words[], FILE* destination){
+char* change_case(char arr[]){
+	
+	int i, size = strlen(arr);
+	for(i=0; i<size; i++){
+		
+		arr[i] = toupper(arr[i]);
+	}
 
-        int i, j, count=0;
-        char word[20];
+	return arr;
+}
 
-        for (i=0; arr[i] != '\0'; i++){
+void return_punctuation(char arr[]){
 
-                if (arr[i] != ' '){
+	int i, size = strlen(arr);
 
-                        word[i]= arr[i];
-                        count++;
-
-                        if (strcmp(word, (words[0])) == 0){
-				
-				for(j=0; j<count; j++){
-                                        fputc(word[j]-32, destination);
-                                }
-			}
-			else if (strcmp(word, (words[1])) == 0){
-				for(j=0; j<count; j++){
-                                        fputc(word[j]-32, destination);
-                                }
-			}
-			else if (strcmp(word, (words[2])) == 0){
-
-				for(j=0; j<count; j++){
-                                        fputc(word[j]-32, destination);
-                                }
-			}
-			else if (strcmp(word, (words[3])) == 0){
-
-                                for(j=0; j<count; j++){
-                                        fputc(word[j]-32, destination);
-                                }
-                        }
-                        else{
-
-                                fputc(arr[i], destination);
-                        }
-
-                        count =0;
-        	}
+	for (i=0; i<size; i++){
+		
+		if(ispunct(arr[i])){
+			
+			arr[i]= '\0';
+		}
 	}
 }
 
+void lower_to_upper(FILE* source, FILE* destination){
+	
+	char read[20], words[][20] = {"Manipal", "Udupi", "miss", "names"};
+	while(!feof(source)){
+			
+		fscanf(source, "%s", read);
+		
+		return_punctuation(read);	
 
-void read_file(FILE* source, FILE* destination, char buffer[]){
+		if(strcmp(read, words[0]) == 0) {
+			
+			fprintf(destination, "%s ", change_case(read));
+			fscanf(source, "%s", read);
+		}
 
-	char* words[] = {"Manipal", "miss", "Udupi", "names"};
+		if(strcmp(read, words[1]) == 0) { 
 
-	while (fgets(buffer, 300, source) != NULL){
-		write_word(buffer, words, destination);
+                        fprintf(destination, "%s ", change_case(read));
+			fscanf(source, "%s", read);
+		}
+		
+		if(strcmp(read, words[2]) == 0) { 
+
+                        fprintf(destination, "%s ", change_case(read));
+			fscanf(source, "%s", read);
+		}
+
+		if(strcmp(read, words[3]) == 0) { 
+
+                        fprintf(destination, "%s ", change_case(read));
+		}
+
+		else{
+			fprintf(destination, "%s ", read);
+		}
 	}
-
 }

@@ -1,2 +1,3 @@
-void write_word(char arr[], char* words[], FILE* destination);
-void read_file(FILE* source, FILE* destination, char buffer[]);
+void return_punctuation(char arr[]);
+char* change_case(char arr[]);
+void lower_to_upper(FILE* source, FILE* destination);
