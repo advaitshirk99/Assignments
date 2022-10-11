@@ -2,6 +2,7 @@
 #include "header.h"
 #include<stdlib.h>
 
+//Function to get data of all students, while keeping track of eligible (more than 80 marks in all subjects) students
 int get_data(students student[], int student_count, int* qualifying_candidates){
 
 	int i, k=0, qualifying_students[student_count], eligible_candidates=0;
@@ -20,19 +21,22 @@ int get_data(students student[], int student_count, int* qualifying_candidates){
 			
 			printf("Marks in Subject%d: ", j+1);     
                 	scanf("%d", &student[i].subject.subject_marks[j]);
-
+			
+			//Checking if student has more than 80 in the particular subject, and if true, incrementing the count by 1
 			if (student[i].subject.subject_marks[j] > 80) count++;
 		}
 		printf("\n");
-
+		
+		//If count =5, it means the student has more than 80 in all the subjects
 		if (count ==5){ 
-			//Use a pointer here, point it to the count and qualifying_students. Then return it from this function to the main, and pass it to the display function, again in main.
+			
 			qualifying_students[k++] = i;
 			eligible_candidates++;
 		}
 	}
 	printf("\n");
 	
+	//Updating the qualifying_candidates pointer
 	qualifying_candidates = qualifying_students;
 
 	return eligible_candidates;

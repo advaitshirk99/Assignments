@@ -2,8 +2,9 @@
 #include<stdio.h>
 #include<stdlib.h>
 
+//Function to count number of words in a line
 int give_words(char arr[]){
-	
+		
 	int i, word_count =0;
 	for(i=0; arr[i] != '\0'; i++){
 		if(arr[i] == ' ' && arr[i+1] != ' '){
@@ -13,6 +14,7 @@ int give_words(char arr[]){
 	return word_count;
 }
 
+//Function to read an entire string/line from the file
 int *give_lines(char arr[], FILE* ptr, int *result){
 
 	int line_count=0, word_count=0;
@@ -36,11 +38,12 @@ int main(){
                 printf("No such file.\n");
                 return 0;
         }
-
+	
+	//The result pointer has been allocated two memory locations. The first location stores the line count, and the second one stores the word count
 	int *final_result, *result;
 	result = malloc(2 * sizeof(int));
 	final_result = give_lines(line, ptr, result);	
-	printf("Line count: %d\nWord Count: %d\n", final_result[0], final_result[1]);
+	printf("Line count: %d\nWord Count: %d\n", result[0], result[1]);
 	
 	free(result);
 	return 0; 

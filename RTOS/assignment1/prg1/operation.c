@@ -1,6 +1,7 @@
 #include "header.h"
 #include<stdio.h>
 
+//Function to compute the sum
 int sum(int arr[]){
 
 	int i, sum=0;
@@ -11,6 +12,7 @@ int sum(int arr[]){
 	return sum;
 }
 
+//Function to compute the average
 int average(int arr[]){
 
 	float avg;
@@ -18,6 +20,7 @@ int average(int arr[]){
 	return avg;
 }
 
+//Function to compute the product
 int product(int arr[]){
 
 	int i, prod=1;
