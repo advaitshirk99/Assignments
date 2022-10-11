@@ -2,10 +2,12 @@
 #include<stdlib.h>
 #include "header.h"
 
-int main(int argc, char* argv[]){
-
-	FILE* source = fopen(argv[1], "r");
-	FILE* destination = fopen(argv[2], "w");
+int main(){
+	
+	FILE* source;
+       	source	= fopen("input.txt", "r");
+	FILE* destination; 
+	destination = fopen("output.txt", "w");
 
 	if (source == NULL){
 	
@@ -17,13 +19,10 @@ int main(int argc, char* argv[]){
 		printf("No destination file\n");
 		exit(0);
 	}
-	
-	printf("works1");	
 	char buffer[510];
-	printf("works2");
 	read_file(source, destination, buffer);
 	
 	fclose(source);
 	fclose(destination);
 	return 0;
-}
+	}
