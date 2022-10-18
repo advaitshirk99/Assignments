@@ -13,4 +13,4 @@ person["gender"] = gender
 person["age"] = age
 person["telephone"] = telephone
 
-print(person)
+print("Name:", person["name"], "Telephone:", person["telephone"])
