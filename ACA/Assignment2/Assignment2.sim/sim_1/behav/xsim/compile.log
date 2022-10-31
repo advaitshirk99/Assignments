@@ -1,0 +1,7 @@
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/Advait-embedded/Xilinx-Vivado/Xilinx projects/Assignment2/Assignment2.srcs/sources_1/new/MUX.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module dataflow_MUX
+INFO: [VRFC 10-311] analyzing module gateflow_MUX
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/Advait-embedded/Xilinx-Vivado/Xilinx projects/Assignment2/Assignment2.srcs/sources_1/new/MUX_tb.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module MUX_tb
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/Advait-embedded/Xilinx-Vivado/Xilinx projects/Assignment2/Assignment2.sim/sim_1/behav/xsim/glbl.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module glbl

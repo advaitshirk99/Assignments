@@ -1,0 +1,1 @@
+-wto "8bc446c82b3e48a6a044c00cc9db03ee" --incr --debug "typical" --relax --mt "2" -L "xil_defaultlib" -L "unisims_ver" -L "unimacro_ver" -L "secureip" --snapshot "PRIORITY_ENCODER_8to3_tb_behav" "xil_defaultlib.PRIORITY_ENCODER_8to3_tb" "xil_defaultlib.glbl" -log "elaborate.log" 
