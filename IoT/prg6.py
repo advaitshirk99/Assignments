@@ -1,16 +1,20 @@
 print("Enter the details:\n")
 person = {}
 
-name = input("Enter the name of the person: ")
-address = input("Enter the address of the person: ")
-gender = input("Enter the gender of the person: ")
-age = int(input("Enter the age of the person: "))
-telephone = int(input("Enter the telephone number of the person: "))
-
+print("Enter the name of the person:")
+name = input()
 person["name"] = name
+
+address = input("Enter the address of the person: \n")
 person["address"] = address
+
+gender = input("Enter the gender of the person: \n")
 person["gender"] = gender
+
+age = int(input("Enter the age of the person: \n"))
 person["age"] = age
+
+telephone = int(input("Enter the telephone number of the person: \n"))
 person["telephone"] = telephone
 
 print(person)
