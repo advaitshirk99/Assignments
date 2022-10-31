@@ -17,4 +17,4 @@ person["age"] = age
 telephone = int(input("Enter the telephone number of the person: \n"))
 person["telephone"] = telephone
 
-print(person)
+print("Name:", person["name"], "Telephone:", person["telephone"])
