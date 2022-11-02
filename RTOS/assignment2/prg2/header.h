@@ -1,0 +1,1 @@
+void append_file(char source1[], char source2[], char destination[]);

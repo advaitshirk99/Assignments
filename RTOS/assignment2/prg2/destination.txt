@@ -1,0 +1,3 @@
+This is the destination file.
+Contents of source 1 and source 2 will
+be written after this line.
