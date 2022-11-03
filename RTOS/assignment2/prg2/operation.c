@@ -23,17 +23,18 @@ void append_file(char source1[], char source2[], char destination[]){
     }
 
     //Contents of source1 will start from new line destination
-    fprintf(dest, "\n");
     while (!feof(src1)){
     	fscanf(src1, "%s", buffer);
-    	fprintf(dest, "%s", buffer);
+        //if(src1 == '\n') fprintf(dest, "\n");
+    	fprintf(dest, "%s ", buffer);
     }
 
     //Contents of source2 will start from new line in destination
     fprintf(dest, "\n");
     while (!feof(src2)){
     	fscanf(src2, "%s", buffer);
-    	fprintf(dest, "%s", buffer);
+        //if (src2 == "\n") fprintf(dest, "\n");
+    	fprintf(dest, "%s ", buffer);
     }
 
     fclose(src1);
