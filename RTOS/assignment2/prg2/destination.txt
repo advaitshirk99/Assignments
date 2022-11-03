@@ -1,15 +1,10 @@
 This is the destination file.
 Contents of source 1 and source 2 will
 be written after this line.
-<<<<<<< HEAD
-
-This is some text from source 1. This text is to be written in the destination file from source 1. 
-This is some text from source 2. This text is to be written in the destination file from source 2. 
-=======
 This is some text from source 
 This text is to be written in the 
 file from source 1. 
 This is some text from source 
 This text is to be written in the 
 file from source 2. 
->>>>>>> 3a45438f92a10e6de58cec95d4817ed8239a6362
+
