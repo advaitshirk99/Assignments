@@ -1,3 +1,9 @@
 This is the destination file.
 Contents of source 1 and source 2 will
 be written after this line.
+This is some text from source 
+This text is to be written in the 
+file from source 1. 
+This is some text from source 
+This text is to be written in the 
+file from source 2. 
