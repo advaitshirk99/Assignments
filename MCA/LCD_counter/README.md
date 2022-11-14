@@ -1,1 +1,1 @@
-Interface a switch with LPC2148. On press of the switch, scroll the displayed string to the left. Use string "DIWALI".
+Interface two switches with LPC2148. When Switch 1 is pressed, the count displayed on LCD is incremented. When Switch 2 is pressed, the count displayed on LCD is decremented.
