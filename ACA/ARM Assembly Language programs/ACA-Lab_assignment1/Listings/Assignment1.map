@@ -1,0 +1,106 @@
+Component: ARM Compiler 5.06 update 6 (build 750) Tool: armlink [4d35ed]
+
+==============================================================================
+
+Section Cross References
+
+    add_16bit_numbers.o(RESET) refers to add_16bit_numbers.o(mycode) for Reset_Handler
+    add_16bit_numbers.o(mycode) refers to add_16bit_numbers.o(data) for Result
+
+
+==============================================================================
+
+Removing Unused input sections from the image.
+
+    Removing add_16bit_numbers.o(RESET), (8 bytes).
+
+1 unused section(s) (total 8 bytes) removed from the image.
+
+==============================================================================
+
+Image Symbol Table
+
+    Local Symbols
+
+    Symbol Name                              Value     Ov Type        Size  Object(Section)
+
+    mycode                                   0x00000000   Section       48  add_16bit_numbers.o(mycode)
+    add_16bit_numbers.s                      0x00000000   Number         0  add_16bit_numbers.o ABSOLUTE
+    Value1                                   0x00000020   Data           2  add_16bit_numbers.o(mycode)
+    Value2                                   0x00000022   Data           2  add_16bit_numbers.o(mycode)
+    data                                     0x40000000   Section        2  add_16bit_numbers.o(data)
+    Result                                   0x40000000   Data           2  add_16bit_numbers.o(data)
+
+    Global Symbols
+
+    Symbol Name                              Value     Ov Type        Size  Object(Section)
+
+    BuildAttributes$$THM_ISAv1$ARM_ISAv4$S$PE$A:L22$X:L11$S22$IEEE1$IW$USESV6$~STKCKD$USESV7$~SHL$OSPACE$EBA8$STANDARDLIB$PRES8$EABIv2 0x00000000   Number         0  anon$$obj.o ABSOLUTE
+    Reset_Handler                            0x00000000   ARM Code       0  add_16bit_numbers.o(mycode)
+
+
+
+==============================================================================
+
+Memory Map of the image
+
+  Image Entry point : 0x00000000
+
+  Load Region LR_1 (Base: 0x00000000, Size: 0x00000034, Max: 0xffffffff, ABSOLUTE)
+
+    Execution Region ER_RO (Exec base: 0x00000000, Load base: 0x00000000, Size: 0x00000030, Max: 0xffffffff, ABSOLUTE)
+
+    Exec Addr    Load Addr    Size         Type   Attr      Idx    E Section Name        Object
+
+    0x00000000   0x00000000   0x00000030   Code   RO            2  * mycode              add_16bit_numbers.o
+
+
+    Execution Region ER_RW (Exec base: 0x40000000, Load base: 0x00000030, Size: 0x00000004, Max: 0xffffffff, ABSOLUTE)
+
+    Exec Addr    Load Addr    Size         Type   Attr      Idx    E Section Name        Object
+
+    0x40000000   0x00000030   0x00000002   Data   RW            3    data                add_16bit_numbers.o
+
+
+    Execution Region ER_ZI (Exec base: 0x40000004, Load base: 0x00000034, Size: 0x00000000, Max: 0xffffffff, ABSOLUTE)
+
+    **** No section assigned to this execution region ****
+
+
+==============================================================================
+
+Image component sizes
+
+
+      Code (inc. data)   RO Data    RW Data    ZI Data      Debug   Object Name
+
+        48         16          0          2          0        324   add_16bit_numbers.o
+
+    ----------------------------------------------------------------------
+        48         16          0          4          0        324   Object Totals
+         0          0          0          0          0          0   (incl. Generated)
+         0          0          0          2          0          0   (incl. Padding)
+
+    ----------------------------------------------------------------------
+         0          0          0          0          0          0   Library Totals
+         0          0          0          0          0          0   (incl. Padding)
+
+    ----------------------------------------------------------------------
+
+==============================================================================
+
+
+      Code (inc. data)   RO Data    RW Data    ZI Data      Debug   
+
+        48         16          0          4          0        324   Grand Totals
+        48         16          0          4          0        324   ELF Image Totals
+        48         16          0          4          0          0   ROM Totals
+
+==============================================================================
+
+    Total RO  Size (Code + RO Data)                   48 (   0.05kB)
+    Total RW  Size (RW Data + ZI Data)                 4 (   0.00kB)
+    Total ROM Size (Code + RO Data + RW Data)         52 (   0.05kB)
+
+==============================================================================
+
