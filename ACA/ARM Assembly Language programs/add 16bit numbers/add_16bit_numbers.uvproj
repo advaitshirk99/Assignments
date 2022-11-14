@@ -47,7 +47,7 @@
             <InvalidFlash>1</InvalidFlash>
           </TargetStatus>
           <OutputDirectory>.\Objects\</OutputDirectory>
-          <OutputName>add_64bit</OutputName>
+          <OutputName>add_16bit_numbers</OutputName>
           <CreateExecutable>1</CreateExecutable>
           <CreateLib>0</CreateLib>
           <CreateHexFile>0</CreateHexFile>
@@ -422,9 +422,9 @@
           <GroupName>Source Group 1</GroupName>
           <Files>
             <File>
-              <FileName>add64.s</FileName>
+              <FileName>add_16bit.s</FileName>
               <FileType>2</FileType>
-              <FilePath>D:\Ebooks\ARMBook examples\math\add64.s</FilePath>
+              <FilePath>.\add_16bit.s</FilePath>
             </File>
           </Files>
         </Group>

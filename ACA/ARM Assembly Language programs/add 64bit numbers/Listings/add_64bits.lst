@@ -1,0 +1,98 @@
+
+
+
+ARM Macro Assembler    Page 1 
+
+
+    1 00000000         ;Adding two 64 bit numbers
+    2 00000000         
+    3 00000000                 AREA             RESET, DATA, READONLY
+    4 00000000                 EXPORT           __Vectors
+    5 00000000         
+    6 00000000         __Vectors
+    7 00000000 100000FF        DCD              0x100000FF  ; Stack pointer val
+                                                            ue when it is empty
+                                                            
+    8 00000004 00000000        DCD              Reset_Handler ; Reset vector
+    9 00000008         
+   10 00000008                 ALIGN
+   11 00000008         
+   12 00000008                 AREA             mycode, CODE, READONLY
+   13 00000000                 EXPORT           Reset_Handler
+   14 00000000                 ENTRY
+   15 00000000         
+   16 00000000         Reset_Handler
+   17 00000000 E3A00101        LDR              R0, =0x40000000 ;pointer to 1st
+                                                             number    
+   18 00000004 E5901000        LDR              R1, [R0]    ;load first part of
+                                                             VALUE1
+   19 00000008 E5B02004        LDR              R2, [R0, #4]! ;load lower part 
+                                                            of VALUE1    
+   20 0000000C E5B03004        LDR              R3, [R0, #4]! ;load first part 
+                                                            of VALUE2
+   21 00000010 E5B04004        LDR              R4, [R0, #4]! ;load lower part 
+                                                            of VALUE2
+   22 00000014 E0926004        ADDS             R6, R2, R4  ;Add the lower 4 by
+                                                            tes and set carry
+   23 00000018 E0A15003        ADC              R5, R1, R3  ;Add upper 4 bytes 
+                                                            including carry
+   24 0000001C E59F0004        LDR              R0, =0x4000FF00
+   25 00000020 E5805000        STR              R5, [R0]    ;Store upper part o
+                                                            f result
+   26 00000024 E5806004        STR              R6, [R0, #4] ;Store lower part 
+                                                            of result
+   27 00000028                 END
+              4000FF00 
+Command Line: --debug --xref --diag_suppress=9931 --apcs=interwork --depend=.\o
+bjects\add_64bits.d -o.\objects\add_64bits.o -IC:\Keil_v5\ARM\RV31\INC -IC:\Kei
+l_v5\ARM\CMSIS\Include -IC:\Keil_v5\ARM\INC\Philips --predefine="__EVAL SETA 1"
+ --predefine="__UVISION_VERSION SETA 529" --list=.\listings\add_64bits.lst add_
+64bits.s
+
+
+
+ARM Macro Assembler    Page 1 Alphabetic symbol ordering
+Relocatable symbols
+
+RESET 00000000
+
+Symbol: RESET
+   Definitions
+      At line 3 in file add_64bits.s
+   Uses
+      None
+Comment: RESET unused
+__Vectors 00000000
+
+Symbol: __Vectors
+   Definitions
+      At line 6 in file add_64bits.s
+   Uses
+      At line 4 in file add_64bits.s
+Comment: __Vectors used once
+2 symbols
+
+
+
+ARM Macro Assembler    Page 1 Alphabetic symbol ordering
+Relocatable symbols
+
+Reset_Handler 00000000
+
+Symbol: Reset_Handler
+   Definitions
+      At line 16 in file add_64bits.s
+   Uses
+      At line 8 in file add_64bits.s
+      At line 13 in file add_64bits.s
+
+mycode 00000000
+
+Symbol: mycode
+   Definitions
+      At line 12 in file add_64bits.s
+   Uses
+      None
+Comment: mycode unused
+2 symbols
+338 symbols in table
