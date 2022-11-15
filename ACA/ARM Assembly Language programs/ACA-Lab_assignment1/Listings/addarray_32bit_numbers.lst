@@ -1,0 +1,128 @@
+
+
+
+ARM Macro Assembler    Page 1 
+
+
+    1 00000000         ;read and store 5 32-bit numbers
+    2 00000000         
+    3 00000000                 AREA             RESET, DATA, READONLY
+    4 00000000                 EXPORT           __Vectors
+    5 00000000         
+    6 00000000         __Vectors
+    7 00000000 100000FF        DCD              0x100000FF  ;stack pointer valu
+                                                            e when stack is emp
+                                                            ty
+    8 00000004 00000000        DCD              Reset_Handler ;Reset vector
+    9 00000008         
+   10 00000008                 ALIGN
+   11 00000008         
+   12 00000008                 AREA             mycode, CODE, READONLY
+   13 00000000                 EXPORT           Reset_Handler
+   14 00000000                 ENTRY
+   15 00000000         
+   16 00000000         Reset_Handler
+   17 00000000 E3A00101        LDR              R0, =0x40000000 ;loading pointe
+                                                            r to the 1st number
+                                                            
+   18 00000004 E8B0003E        LDM              R0!, {R1-R5} ;Load in multiple 
+                                                            registers starting 
+                                                            from address stored
+                                                             in R0 
+   19 00000008 E0911002        ADDS             R1, R1, R2  ;Summing R1 and R2 
+                                                            and storing it in R
+                                                            1, while setting ca
+                                                            rry flag
+   20 0000000C E0B11003        ADCS             R1, R1, R3  ;Summing R1, R3 and
+                                                             previous carry and
+                                                             storing it in R1, 
+                                                            while setting carry
+                                                             flag
+   21 00000010 E0B11004        ADCS             R1, R1, R4  ;Summing R1, R4 and
+                                                             previous carry and
+                                                             storing it in R1, 
+                                                            while setting carry
+                                                             flag
+   22 00000014 E0A11005        ADC              R1, R1, R5  ;Summing R1, R5 and
+                                                             previous carry and
+                                                             storing it in R1
+   23 00000018         
+   24 00000018 E59F0004        LDR              R0, =0x40001000 ;Loading pointe
+                                                            r to the location w
+                                                            here result is to b
+                                                            e stored
+   25 0000001C E5801000        STR              R1, [R0]    ;Storing the result
+                                                             in address stored 
+                                                            in R0
+   26 00000020         
+   27 00000020 EAFFFFFE 
+                       STOP    B                STOP
+   28 00000024                 END
+              40001000 
+Command Line: --debug --xref --diag_suppress=9931 --apcs=interwork --depend=.\o
+bjects\addarray_32bit_numbers.d -o.\objects\addarray_32bit_numbers.o -IC:\Keil_
+v5\ARM\RV31\INC -IC:\Keil_v5\ARM\CMSIS\Include -IC:\Keil_v5\ARM\INC\Philips --p
+redefine="__EVAL SETA 1" --predefine="__UVISION_VERSION SETA 529" --list=.\list
+
+
+
+ARM Macro Assembler    Page 2 
+
+
+ings\addarray_32bit_numbers.lst addArray_32bit_numbers.s
+
+
+
+ARM Macro Assembler    Page 1 Alphabetic symbol ordering
+Relocatable symbols
+
+RESET 00000000
+
+Symbol: RESET
+   Definitions
+      At line 3 in file addArray_32bit_numbers.s
+   Uses
+      None
+Comment: RESET unused
+__Vectors 00000000
+
+Symbol: __Vectors
+   Definitions
+      At line 6 in file addArray_32bit_numbers.s
+   Uses
+      At line 4 in file addArray_32bit_numbers.s
+Comment: __Vectors used once
+2 symbols
+
+
+
+ARM Macro Assembler    Page 1 Alphabetic symbol ordering
+Relocatable symbols
+
+Reset_Handler 00000000
+
+Symbol: Reset_Handler
+   Definitions
+      At line 16 in file addArray_32bit_numbers.s
+   Uses
+      At line 8 in file addArray_32bit_numbers.s
+      At line 13 in file addArray_32bit_numbers.s
+
+STOP 00000020
+
+Symbol: STOP
+   Definitions
+      At line 27 in file addArray_32bit_numbers.s
+   Uses
+      At line 27 in file addArray_32bit_numbers.s
+Comment: STOP used once
+mycode 00000000
+
+Symbol: mycode
+   Definitions
+      At line 12 in file addArray_32bit_numbers.s
+   Uses
+      None
+Comment: mycode unused
+3 symbols
+339 symbols in table

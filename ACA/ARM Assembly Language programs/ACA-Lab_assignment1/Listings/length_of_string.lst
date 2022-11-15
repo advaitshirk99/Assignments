@@ -1,0 +1,121 @@
+
+
+
+ARM Macro Assembler    Page 1 
+
+
+    1 00000000         ;find length of string
+    2 00000000                 AREA             Reset, CODE, READONLY
+    3 00000000                 ENTRY
+    4 00000000         Main
+    5 00000000 E59F002C        LDR              R0, =Data1
+    6 00000004 E0211001        EOR              R1,R1,R1
+    7 00000008 E59F4020        LDR              R4, CharCount
+    8 0000000C         
+    9 0000000C         Loop
+   10 0000000C E4D02001        LDRB             R2, [R0], #1
+   11 00000010 E352000D        CMP              R2, #CR
+   12 00000014 0A000001        BEQ              Done
+   13 00000018 E2811001        ADD              R1,R1, #1
+   14 0000001C EAFFFFFA        BAL              Loop
+   15 00000020         Done
+   16 00000020 E5841000        STR              R1, [R4]
+   17 00000024 EAFFFFFE 
+                       STOP    B                STOP
+   18 00000028         
+   19 00000028         Data1
+   20 00000028 48 65 6C 
+              6C 6F 0D         DCB              "Hello", CR
+   21 0000002E 00 00           ALIGN
+   22 00000030         
+   23 00000030         CharCount
+   24 00000030 40000000        DCD              &40000000
+   25 00000034 0000000D 
+                       CR      EQU              0x0D
+   26 00000034                 END
+              00000000 
+Command Line: --debug --xref --diag_suppress=9931 --apcs=interwork --depend=.\o
+bjects\length_of_string.d -o.\objects\length_of_string.o -IC:\Keil_v5\ARM\RV31\
+INC -IC:\Keil_v5\ARM\CMSIS\Include -IC:\Keil_v5\ARM\INC\Philips --predefine="__
+EVAL SETA 1" --predefine="__UVISION_VERSION SETA 529" --list=.\listings\length_
+of_string.lst length_of_string.s
+
+
+
+ARM Macro Assembler    Page 1 Alphabetic symbol ordering
+Relocatable symbols
+
+CharCount 00000030
+
+Symbol: CharCount
+   Definitions
+      At line 23 in file length_of_string.s
+   Uses
+      At line 7 in file length_of_string.s
+Comment: CharCount used once
+Data1 00000028
+
+Symbol: Data1
+   Definitions
+      At line 19 in file length_of_string.s
+   Uses
+      At line 5 in file length_of_string.s
+Comment: Data1 used once
+Done 00000020
+
+Symbol: Done
+   Definitions
+      At line 15 in file length_of_string.s
+   Uses
+      At line 12 in file length_of_string.s
+Comment: Done used once
+Loop 0000000C
+
+Symbol: Loop
+   Definitions
+      At line 9 in file length_of_string.s
+   Uses
+      At line 14 in file length_of_string.s
+Comment: Loop used once
+Main 00000000
+
+Symbol: Main
+   Definitions
+      At line 4 in file length_of_string.s
+   Uses
+      None
+Comment: Main unused
+Reset 00000000
+
+Symbol: Reset
+   Definitions
+      At line 2 in file length_of_string.s
+   Uses
+      None
+Comment: Reset unused
+STOP 00000024
+
+Symbol: STOP
+   Definitions
+      At line 17 in file length_of_string.s
+   Uses
+      At line 17 in file length_of_string.s
+Comment: STOP used once
+7 symbols
+
+
+
+ARM Macro Assembler    Page 1 Alphabetic symbol ordering
+Absolute symbols
+
+CR 0000000D
+
+Symbol: CR
+   Definitions
+      At line 25 in file length_of_string.s
+   Uses
+      At line 11 in file length_of_string.s
+      At line 20 in file length_of_string.s
+
+1 symbol
+342 symbols in table

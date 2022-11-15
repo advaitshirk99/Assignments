@@ -26,8 +26,10 @@ Reset_Handler
 STOP	B		STOP	
 
 Value1	DCW		0x1234
+		ALIGN
 Value2	DCW		0x5432
-		
+		ALIGN
+			
 		AREA data, DATA, READWRITE
 Result	DCW 	0
 		END

@@ -1,0 +1,116 @@
+
+
+
+ARM Macro Assembler    Page 1 
+
+
+    1 00000000         ;program to find the factorial of a number
+    2 00000000         
+    3 00000000                 AREA             RESET, DATA, READONLY
+    4 00000000                 EXPORT           __Vectors
+    5 00000000         
+    6 00000000         __Vectors
+    7 00000000 100000FF        DCD              0x100000FF  ;Stack pointer valu
+                                                            e when stack is emp
+                                                            ty
+    8 00000004 00000000        DCD              Reset_Handler ;Reset vector
+    9 00000008         
+   10 00000008                 ALIGN
+   11 00000008         
+   12 00000008                 AREA             mycode, CODE, READONLY
+   13 00000000                 EXPORT           Reset_Handler
+   14 00000000                 ENTRY
+   15 00000000         
+   16 00000000         Reset_Handler
+   17 00000000 E3A00005        LDR              R0, =05     ;Loading the number
+                                                             who's factorial is
+                                                             to be calculated
+   18 00000004 E1A01000        MOV              R1, R0      ;Copy the content o
+                                                            f R0 to R1
+   19 00000008         
+   20 00000008 E2511001 
+                       FACT    SUBS             R1, R1, #1  ;R1 = R1 - 1
+   21 0000000C E3510001        CMP              R1, #1      ;Comparing R1 with 
+                                                            1
+   22 00000010 0A000002        BEQ              STOP        ;Branch to STOP if 
+                                                            equal
+   23 00000014 E0030190        MUL              R3, R0, R1  ;Store the product 
+                                                            of R0 and R1 in R3
+   24 00000018 E1A00003        MOV              R0, R3      ;Copy the result fr
+                                                            om R3 to R0
+   25 0000001C 1AFFFFF9        BNE              FACT        ;Branch to FACT if 
+                                                            not equal
+   26 00000020         
+   27 00000020 EAFFFFFE 
+                       STOP    B                STOP
+   28 00000024                 END
+Command Line: --debug --xref --diag_suppress=9931 --apcs=interwork --depend=.\o
+bjects\factorial.d -o.\objects\factorial.o -IC:\Keil_v5\ARM\RV31\INC -IC:\Keil_
+v5\ARM\CMSIS\Include -IC:\Keil_v5\ARM\INC\Philips --predefine="__EVAL SETA 1" -
+-predefine="__UVISION_VERSION SETA 529" --list=.\listings\factorial.lst factori
+al.s
+
+
+
+ARM Macro Assembler    Page 1 Alphabetic symbol ordering
+Relocatable symbols
+
+RESET 00000000
+
+Symbol: RESET
+   Definitions
+      At line 3 in file factorial.s
+   Uses
+      None
+Comment: RESET unused
+__Vectors 00000000
+
+Symbol: __Vectors
+   Definitions
+      At line 6 in file factorial.s
+   Uses
+      At line 4 in file factorial.s
+Comment: __Vectors used once
+2 symbols
+
+
+
+ARM Macro Assembler    Page 1 Alphabetic symbol ordering
+Relocatable symbols
+
+FACT 00000008
+
+Symbol: FACT
+   Definitions
+      At line 20 in file factorial.s
+   Uses
+      At line 25 in file factorial.s
+Comment: FACT used once
+Reset_Handler 00000000
+
+Symbol: Reset_Handler
+   Definitions
+      At line 16 in file factorial.s
+   Uses
+      At line 8 in file factorial.s
+      At line 13 in file factorial.s
+
+STOP 00000020
+
+Symbol: STOP
+   Definitions
+      At line 27 in file factorial.s
+   Uses
+      At line 22 in file factorial.s
+      At line 27 in file factorial.s
+
+mycode 00000000
+
+Symbol: mycode
+   Definitions
+      At line 12 in file factorial.s
+   Uses
+      None
+Comment: mycode unused
+4 symbols
+338 symbols in table
