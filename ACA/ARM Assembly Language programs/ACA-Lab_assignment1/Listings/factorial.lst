@@ -22,7 +22,7 @@ ARM Macro Assembler    Page 1
    14 00000000                 ENTRY
    15 00000000         
    16 00000000         Reset_Handler
-   17 00000000 E3A00005        LDR              R0, =05     ;Loading the number
+   17 00000000 E3A00007        MOV              R0, #07     ;Loading the number
                                                              who's factorial is
                                                              to be calculated
    18 00000004 E1A01000        MOV              R1, R0      ;Copy the content o

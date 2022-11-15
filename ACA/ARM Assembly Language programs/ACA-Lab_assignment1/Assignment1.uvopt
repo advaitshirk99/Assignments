@@ -292,18 +292,6 @@
       <tvExp>0</tvExp>
       <tvExpOptDlg>0</tvExpOptDlg>
       <bDave2>0</bDave2>
-      <PathWithFileName>.\DSA_insertionSort.s</PathWithFileName>
-      <FilenameWithoutPath>DSA_insertionSort.s</FilenameWithoutPath>
-      <RteFlg>0</RteFlg>
-      <bShared>0</bShared>
-    </File>
-    <File>
-      <GroupNumber>1</GroupNumber>
-      <FileNumber>8</FileNumber>
-      <FileType>2</FileType>
-      <tvExp>0</tvExp>
-      <tvExpOptDlg>0</tvExpOptDlg>
-      <bDave2>0</bDave2>
       <PathWithFileName>.\length_of_string.s</PathWithFileName>
       <FilenameWithoutPath>length_of_string.s</FilenameWithoutPath>
       <RteFlg>0</RteFlg>

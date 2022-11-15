@@ -14,7 +14,7 @@ __Vectors
 		ENTRY
 
 Reset_Handler
-		LDR 	R0, =05						;Loading the number who's factorial is to be calculated
+		MOV 	R0, #07						;Loading the number who's factorial is to be calculated
 		MOV		R1, R0						;Copy the content of R0 to R1
 	
 FACT	SUBS	R1, R1, #1					;R1 = R1 - 1

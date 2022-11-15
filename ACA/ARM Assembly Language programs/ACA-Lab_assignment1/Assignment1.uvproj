@@ -561,8 +561,8 @@
                   <RVCTZI>0</RVCTZI>
                   <RVCTOtherData>0</RVCTOtherData>
                   <ModuleSelection>0</ModuleSelection>
-                  <IncludeInBuild>0</IncludeInBuild>
-                  <AlwaysBuild>0</AlwaysBuild>
+                  <IncludeInBuild>1</IncludeInBuild>
+                  <AlwaysBuild>1</AlwaysBuild>
                   <GenerateAssemblyFile>2</GenerateAssemblyFile>
                   <AssembleAssemblyFile>2</AssembleAssemblyFile>
                   <PublicsOnly>2</PublicsOnly>
@@ -680,9 +680,9 @@
               </FileOption>
             </File>
             <File>
-              <FileName>DSA_insertionSort.s</FileName>
+              <FileName>length_of_string.s</FileName>
               <FileType>2</FileType>
-              <FilePath>.\DSA_insertionSort.s</FilePath>
+              <FilePath>.\length_of_string.s</FilePath>
               <FileOption>
                 <CommonProperty>
                   <UseCPPCompiler>2</UseCPPCompiler>
@@ -721,11 +721,6 @@
                   </Aads>
                 </FileArmAds>
               </FileOption>
-            </File>
-            <File>
-              <FileName>length_of_string.s</FileName>
-              <FileType>2</FileType>
-              <FilePath>.\length_of_string.s</FilePath>
             </File>
           </Files>
         </Group>
