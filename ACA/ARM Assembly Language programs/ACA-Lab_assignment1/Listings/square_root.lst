@@ -1,0 +1,82 @@
+
+
+
+ARM Macro Assembler    Page 1 
+
+
+    1 00000000         ;program to find the square root of a number
+    2 00000000         
+    3 00000000                 AREA             PROGRAM,CODE,READONLY
+    4 00000000                 ENTRY
+    5 00000000         MAIN
+    6 00000000 E3A02014        MOV              R2, #20     ;A
+    7 00000004 E3A00001        LDR              R0, =0x01   ;D
+    8 00000008 E3A01001        LDR              R1, =0x01   ;E
+    9 0000000C E0422000 
+                       LOOP1   SUB              R2, R2, R0
+   10 00000010 E3520000        CMP              R2, #0
+   11 00000014 0A000003        BEQ              LOOP
+   12 00000018 E2800001        ADD              R0, #1
+   13 0000001C E2800001        ADD              R0, #1
+   14 00000020 E2811001        ADD              R1, #1
+   15 00000024 EAFFFFF8        B                LOOP1
+   16 00000028         LOOP
+   17 00000028 E3A03101        LDR              R3, =0x40000000
+   18 0000002C E5831000        STR              R1, [R3]
+   19 00000030         
+   20 00000030 EAFFFFFE 
+                       STOP    B                STOP
+   21 00000034                 END
+Command Line: --debug --xref --diag_suppress=9931 --apcs=interwork --depend=.\o
+bjects\square_root.d -o.\objects\square_root.o -IC:\Keil_v5\ARM\RV31\INC -IC:\K
+eil_v5\ARM\CMSIS\Include -IC:\Keil_v5\ARM\INC\Philips --predefine="__EVAL SETA 
+1" --predefine="__UVISION_VERSION SETA 529" --list=.\listings\square_root.lst s
+quare_root.s
+
+
+
+ARM Macro Assembler    Page 1 Alphabetic symbol ordering
+Relocatable symbols
+
+LOOP 00000028
+
+Symbol: LOOP
+   Definitions
+      At line 16 in file square_root.s
+   Uses
+      At line 11 in file square_root.s
+Comment: LOOP used once
+LOOP1 0000000C
+
+Symbol: LOOP1
+   Definitions
+      At line 9 in file square_root.s
+   Uses
+      At line 15 in file square_root.s
+Comment: LOOP1 used once
+MAIN 00000000
+
+Symbol: MAIN
+   Definitions
+      At line 5 in file square_root.s
+   Uses
+      None
+Comment: MAIN unused
+PROGRAM 00000000
+
+Symbol: PROGRAM
+   Definitions
+      At line 3 in file square_root.s
+   Uses
+      None
+Comment: PROGRAM unused
+STOP 00000030
+
+Symbol: STOP
+   Definitions
+      At line 20 in file square_root.s
+   Uses
+      At line 20 in file square_root.s
+Comment: STOP used once
+5 symbols
+337 symbols in table

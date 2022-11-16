@@ -1,0 +1,127 @@
+
+
+
+ARM Macro Assembler    Page 1 
+
+
+    1 00000000         ;find if the 32-bit number is negative or positive
+    2 00000000                 AREA             RESET, DATA, READONLY
+    3 00000000                 EXPORT           __Vectors
+    4 00000000         
+    5 00000000         __Vectors
+    6 00000000 100000FF        DCD              0x100000FF  ;stack pointer valu
+                                                            e when stack is emp
+                                                            ty
+    7 00000004 00000000        DCD              Reset_Handler ;Reset vector
+    8 00000008         
+    9 00000008                 ALIGN
+   10 00000008         
+   11 00000008                 AREA             mycode, CODE, READONLY
+   12 00000000                 EXPORT           Reset_Handler
+   13 00000000                 ENTRY
+   14 00000000         
+   15 00000000         Reset_Handler
+   16 00000000 E3A01101        LDR              R1, =0x40000000 ;Load address o
+                                                            f Value1 in R1
+   17 00000004 E5911000        LDR              R1, [R1]    ;Load value of Valu
+                                                            e1 in R1
+   18 00000008         
+   19 00000008 E3A00000        MOV              R0, #00     ;R0=0 if number is 
+                                                            positive. Setting R
+                                                            0 to 0 in the start
+                                                             of the program
+   20 0000000C E3A02000        MOV              R2, #00     ;To test if carry i
+                                                            s set or not
+   21 00000010 E0900000        ADDS             R0, R0, R0  ;To set carry flag 
+                                                            as 0
+   22 00000014 E1B01081        MOVS             R1, R1, LSL #1 ;Logical shift l
+                                                            eft operation to se
+                                                            e if carry flag is 
+                                                            being set, in case 
+                                                            of negative number
+   23 00000018 E0A22002        ADC              R2, R2, R2  ;R2 = R2 + carry
+   24 0000001C E3520001        CMP              R2, #1      ;Compare R2 with 1
+   25 00000020 0A000000        BEQ              NEGATIVE    ;Branch to NEGATIVE
+                                                             if comparison is e
+                                                            qual 
+   26 00000024 EAFFFFFE 
+                       STOP    B                STOP
+   27 00000028         
+   28 00000028         NEGATIVE
+   29 00000028 E3A00001        MOV              R0, #01     ;R0 set to 1 becaus
+                                                            e number is negativ
+                                                            e
+   30 0000002C EAFFFFFC        B                STOP
+   31 00000030         
+   32 00000030         ;Value1 DCD  0xF2234556
+   33 00000030                 END
+Command Line: --debug --xref --diag_suppress=9931 --apcs=interwork --depend=.\o
+bjects\find_negative_positive.d -o.\objects\find_negative_positive.o -IC:\Keil_
+v5\ARM\RV31\INC -IC:\Keil_v5\ARM\CMSIS\Include -IC:\Keil_v5\ARM\INC\Philips --p
+redefine="__EVAL SETA 1" --predefine="__UVISION_VERSION SETA 529" --list=.\list
+ings\find_negative_positive.lst find_negative_positive.s
+
+
+
+ARM Macro Assembler    Page 1 Alphabetic symbol ordering
+Relocatable symbols
+
+RESET 00000000
+
+Symbol: RESET
+   Definitions
+      At line 2 in file find_negative_positive.s
+   Uses
+      None
+Comment: RESET unused
+__Vectors 00000000
+
+Symbol: __Vectors
+   Definitions
+      At line 5 in file find_negative_positive.s
+   Uses
+      At line 3 in file find_negative_positive.s
+Comment: __Vectors used once
+2 symbols
+
+
+
+ARM Macro Assembler    Page 1 Alphabetic symbol ordering
+Relocatable symbols
+
+NEGATIVE 00000028
+
+Symbol: NEGATIVE
+   Definitions
+      At line 28 in file find_negative_positive.s
+   Uses
+      At line 25 in file find_negative_positive.s
+Comment: NEGATIVE used once
+Reset_Handler 00000000
+
+Symbol: Reset_Handler
+   Definitions
+      At line 15 in file find_negative_positive.s
+   Uses
+      At line 7 in file find_negative_positive.s
+      At line 12 in file find_negative_positive.s
+
+STOP 00000024
+
+Symbol: STOP
+   Definitions
+      At line 26 in file find_negative_positive.s
+   Uses
+      At line 26 in file find_negative_positive.s
+      At line 30 in file find_negative_positive.s
+
+mycode 00000000
+
+Symbol: mycode
+   Definitions
+      At line 11 in file find_negative_positive.s
+   Uses
+      None
+Comment: mycode unused
+4 symbols
+338 symbols in table

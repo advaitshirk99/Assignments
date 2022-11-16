@@ -1,0 +1,174 @@
+
+
+
+ARM Macro Assembler    Page 1 
+
+
+    1 00000000         ;program to convert hex number to ascii value
+    2 00000000                 AREA             RESET, DATA, READONLY
+    3 00000000                 EXPORT           __Vectors
+    4 00000000         
+    5 00000000         __Vectors
+    6 00000000 100000FF        DCD              0x100000FF  ;Stack pointer valu
+                                                            e when stack is emp
+                                                            ty
+    7 00000004 00000000        DCD              Reset_Handler ;Reset vector
+    8 00000008         
+    9 00000008                 ALIGN
+   10 00000008         
+   11 00000008                 AREA             mycode, CODE, READONLY
+   12 00000000                 EXPORT           Reset_Handler
+   13 00000000                 ENTRY
+   14 00000000         
+   15 00000000         Reset_Handler
+   16 00000000 E3A00101        LDR              R0, =0x40000000 ;Get the memory
+                                                             loc of Hex Digit s
+                                                            ource
+   17 00000004 E5905000        LDR              R5, [R0]
+   18 00000008         ;LDR  R6, =DST
+   19 00000008 E3A06111        LDR              R6, =0x40000004 ;Load R6 with A
+                                                            ddress of Destinati
+                                                            on location 
+   20 0000000C E3A01008        MOV              R1, #08     ;R1 = 8, indicating
+                                                             8 HEX digits
+   21 00000010         
+   22 00000010         UP
+   23 00000010 E205200F        AND              R2, R5, #0x0F ;Masking to get o
+                                                            nly LSB byte in cas
+                                                            e of multidigit num
+                                                            ber
+   24 00000014 E3520009        CMP              R2, #09     ;Affects the carry 
+                                                            flag if no>9 c = 1 
+                                                            else C = 0
+   25 00000018 3A000000        BLO              DOWN        ;Branch to DOWN if 
+                                                            low
+   26 0000001C E2822007        ADD              R2, #07     ;If no > 9, add 7 +
+                                                             30
+   27 00000020         DOWN
+   28 00000020 E2822030        ADD              R2, #0x30
+   29 00000024 E4C62001        STRB             R2, [R6], #01 ;Storing the resu
+                                                            lt in Memory pointe
+                                                            d by R6
+   30 00000028 E1A05265        ROR              R5, #4      ;Rotate the number 
+                                                            by 4 bits for next 
+                                                            digit
+   31 0000002C E2511001        SUBS             R1, #01     ;decrement the coun
+                                                            t by 1 and check fo
+                                                            r zero condition
+   32 00000030 1AFFFFF6        BNE              UP          ;if Z = 0 repeat th
+                                                            e process else exit
+                                                            
+   33 00000034 EAFFFFFE 
+                       STOP    B                STOP
+   34 00000038         
+   35 00000038                 AREA             ASCII, DATA, READWRITE
+   36 00000000 00000000 
+
+
+
+ARM Macro Assembler    Page 2 
+
+
+                       DST     DCD              0
+   37 00000004         
+   38 00000004                 END
+Command Line: --debug --xref --diag_suppress=9931 --apcs=interwork --depend=.\o
+bjects\hex_to_ascii.d -o.\objects\hex_to_ascii.o -IC:\Keil_v5\ARM\RV31\INC -IC:
+\Keil_v5\ARM\CMSIS\Include -IC:\Keil_v5\ARM\INC\Philips --predefine="__EVAL SET
+A 1" --predefine="__UVISION_VERSION SETA 529" --list=.\listings\hex_to_ascii.ls
+t hex_to_ascii.s
+
+
+
+ARM Macro Assembler    Page 1 Alphabetic symbol ordering
+Relocatable symbols
+
+RESET 00000000
+
+Symbol: RESET
+   Definitions
+      At line 2 in file hex_to_ascii.s
+   Uses
+      None
+Comment: RESET unused
+__Vectors 00000000
+
+Symbol: __Vectors
+   Definitions
+      At line 5 in file hex_to_ascii.s
+   Uses
+      At line 3 in file hex_to_ascii.s
+Comment: __Vectors used once
+2 symbols
+
+
+
+ARM Macro Assembler    Page 1 Alphabetic symbol ordering
+Relocatable symbols
+
+DOWN 00000020
+
+Symbol: DOWN
+   Definitions
+      At line 27 in file hex_to_ascii.s
+   Uses
+      At line 25 in file hex_to_ascii.s
+Comment: DOWN used once
+Reset_Handler 00000000
+
+Symbol: Reset_Handler
+   Definitions
+      At line 15 in file hex_to_ascii.s
+   Uses
+      At line 7 in file hex_to_ascii.s
+      At line 12 in file hex_to_ascii.s
+
+STOP 00000034
+
+Symbol: STOP
+   Definitions
+      At line 33 in file hex_to_ascii.s
+   Uses
+      At line 33 in file hex_to_ascii.s
+Comment: STOP used once
+UP 00000010
+
+Symbol: UP
+   Definitions
+      At line 22 in file hex_to_ascii.s
+   Uses
+      At line 32 in file hex_to_ascii.s
+Comment: UP used once
+mycode 00000000
+
+Symbol: mycode
+   Definitions
+      At line 11 in file hex_to_ascii.s
+   Uses
+      None
+Comment: mycode unused
+5 symbols
+
+
+
+ARM Macro Assembler    Page 1 Alphabetic symbol ordering
+Relocatable symbols
+
+ASCII 00000000
+
+Symbol: ASCII
+   Definitions
+      At line 35 in file hex_to_ascii.s
+   Uses
+      None
+Comment: ASCII unused
+DST 00000000
+
+Symbol: DST
+   Definitions
+      At line 36 in file hex_to_ascii.s
+   Uses
+      None
+Comment: DST unused
+2 symbols
+341 symbols in table

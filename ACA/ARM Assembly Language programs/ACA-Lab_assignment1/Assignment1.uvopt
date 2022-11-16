@@ -158,7 +158,7 @@
         <Mm>
           <WinNumber>2</WinNumber>
           <SubType>0</SubType>
-          <ItemText>0x40000004</ItemText>
+          <ItemText>0x40000000</ItemText>
           <AccSizeX>0</AccSizeX>
         </Mm>
       </MemoryWindow2>
@@ -294,6 +294,42 @@
       <bDave2>0</bDave2>
       <PathWithFileName>.\length_of_string.s</PathWithFileName>
       <FilenameWithoutPath>length_of_string.s</FilenameWithoutPath>
+      <RteFlg>0</RteFlg>
+      <bShared>0</bShared>
+    </File>
+    <File>
+      <GroupNumber>1</GroupNumber>
+      <FileNumber>8</FileNumber>
+      <FileType>2</FileType>
+      <tvExp>0</tvExp>
+      <tvExpOptDlg>0</tvExpOptDlg>
+      <bDave2>0</bDave2>
+      <PathWithFileName>.\square_root.s</PathWithFileName>
+      <FilenameWithoutPath>square_root.s</FilenameWithoutPath>
+      <RteFlg>0</RteFlg>
+      <bShared>0</bShared>
+    </File>
+    <File>
+      <GroupNumber>1</GroupNumber>
+      <FileNumber>9</FileNumber>
+      <FileType>2</FileType>
+      <tvExp>0</tvExp>
+      <tvExpOptDlg>0</tvExpOptDlg>
+      <bDave2>0</bDave2>
+      <PathWithFileName>.\find_negative_positive.s</PathWithFileName>
+      <FilenameWithoutPath>find_negative_positive.s</FilenameWithoutPath>
+      <RteFlg>0</RteFlg>
+      <bShared>0</bShared>
+    </File>
+    <File>
+      <GroupNumber>1</GroupNumber>
+      <FileNumber>10</FileNumber>
+      <FileType>2</FileType>
+      <tvExp>0</tvExp>
+      <tvExpOptDlg>0</tvExpOptDlg>
+      <bDave2>0</bDave2>
+      <PathWithFileName>.\hex_to_ascii.s</PathWithFileName>
+      <FilenameWithoutPath>hex_to_ascii.s</FilenameWithoutPath>
       <RteFlg>0</RteFlg>
       <bShared>0</bShared>
     </File>
