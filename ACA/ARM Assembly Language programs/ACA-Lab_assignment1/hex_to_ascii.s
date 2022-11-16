@@ -20,7 +20,7 @@ Reset_Handler
 		MOV		R1, #08						;R1 = 8, indicating 8 HEX digits
 		
 UP
-		AND 	R2,	R5, #0x0F 				;Masking to get only LSB byte in case of multidigit number
+		AND 	R2,	R5, #0x0F 				;Masking to get only LSB half-byte in case of multidigit number
 		CMP 	R2, #09 					;Affects the carry flag if no>9 c = 1 else C = 0
 		BLO 	DOWN						;Branch to DOWN if low
 		ADD 	R2, #07						;If no > 9, add 7 + 30
