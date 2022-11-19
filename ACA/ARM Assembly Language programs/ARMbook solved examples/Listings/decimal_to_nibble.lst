@@ -1,0 +1,123 @@
+
+
+
+ARM Macro Assembler    Page 1 
+
+
+    1 00000000         ;convert an ASCII numeric character to decimal
+    2 00000000         
+    3 00000000                 AREA             Program, CODE, READONLY
+    4 00000000                 ENTRY
+    5 00000000         
+    6 00000000         Main
+    7 00000000 E3E01000        MOV              R1, #-1     ;set -1 as error fl
+                                                            ag
+    8 00000004 E55F0008        LDRB             R0, Char    ;get the character
+    9 00000008 E2500030        SUBS             R0, R0, #"0" ;convert and check
+                                                             if character is < 
+                                                            0
+   10 0000000C 3A000002        BCC              Done        ;if so do nothing
+   11 00000010 E3500009        CMP              R0, #9      ;check if character
+                                                             is > 9
+   12 00000014 8A000000        BHI              Done        ;if so do nothing
+   13 00000018 E1A01000        MOV              R1, R0      ;otherwise....
+   14 0000001C         Done
+   15 0000001C E50F1008        STR              R1, Result  ;.....store the dec
+                                                            imal no
+   16 00000020 EF000011        SWI              &11         ;all done
+   17 00000024         
+   18 00000024                 AREA             Data1, DATA
+   19 00000000 37      Char    DCB              &37         ;ASCII representati
+                                                            on of 7
+   20 00000001 00 00 00        ALIGN
+   21 00000004         
+   22 00000004                 AREA             Data2, DATA
+   23 00000000 00000000 
+                       Result  DCD              0           ;storage for result
+                                                            
+   24 00000004         
+   25 00000004                 END
+Command Line: --debug --xref --diag_suppress=9931 --apcs=interwork --depend=.\o
+bjects\decimal_to_nibble.d -o.\objects\decimal_to_nibble.o -IC:\Keil_v5\ARM\RV3
+1\INC -IC:\Keil_v5\ARM\CMSIS\Include -IC:\Keil_v5\ARM\INC\Philips --predefine="
+__EVAL SETA 1" --predefine="__UVISION_VERSION SETA 529" --list=.\listings\decim
+al_to_nibble.lst decimal_to_nibble.s
+
+
+
+ARM Macro Assembler    Page 1 Alphabetic symbol ordering
+Relocatable symbols
+
+Done 0000001C
+
+Symbol: Done
+   Definitions
+      At line 14 in file decimal_to_nibble.s
+   Uses
+      At line 10 in file decimal_to_nibble.s
+      At line 12 in file decimal_to_nibble.s
+
+Main 00000000
+
+Symbol: Main
+   Definitions
+      At line 6 in file decimal_to_nibble.s
+   Uses
+      None
+Comment: Main unused
+Program 00000000
+
+Symbol: Program
+   Definitions
+      At line 3 in file decimal_to_nibble.s
+   Uses
+      None
+Comment: Program unused
+3 symbols
+
+
+
+ARM Macro Assembler    Page 1 Alphabetic symbol ordering
+Relocatable symbols
+
+Char 00000000
+
+Symbol: Char
+   Definitions
+      At line 19 in file decimal_to_nibble.s
+   Uses
+      At line 8 in file decimal_to_nibble.s
+Comment: Char used once
+Data1 00000000
+
+Symbol: Data1
+   Definitions
+      At line 18 in file decimal_to_nibble.s
+   Uses
+      None
+Comment: Data1 unused
+2 symbols
+
+
+
+ARM Macro Assembler    Page 1 Alphabetic symbol ordering
+Relocatable symbols
+
+Data2 00000000
+
+Symbol: Data2
+   Definitions
+      At line 22 in file decimal_to_nibble.s
+   Uses
+      None
+Comment: Data2 unused
+Result 00000000
+
+Symbol: Result
+   Definitions
+      At line 23 in file decimal_to_nibble.s
+   Uses
+      At line 15 in file decimal_to_nibble.s
+Comment: Result used once
+2 symbols
+339 symbols in table

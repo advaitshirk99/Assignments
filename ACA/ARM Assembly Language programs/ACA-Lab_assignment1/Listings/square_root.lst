@@ -4,14 +4,18 @@
 ARM Macro Assembler    Page 1 
 
 
-    1 00000000         ;program to find the square root of a number
+    1 00000000         ;program to find the square root of a perfect square ((6
+                       4)hex = (100)decimal)
     2 00000000         
     3 00000000                 AREA             PROGRAM,CODE,READONLY
     4 00000000                 ENTRY
     5 00000000         MAIN
-    6 00000000 E3A02014        MOV              R2, #20     ;A
-    7 00000004 E3A00001        LDR              R0, =0x01   ;D
-    8 00000008 E3A01001        LDR              R1, =0x01   ;E
+    6 00000000 E3A02064        MOV              R2, #0x64   ;R2 stores the hex 
+                                                            value of the number
+                                                            
+    7 00000004 E3A00001        LDR              R0, =0x01   ;Stores the result
+    8 00000008 E3A01001        LDR              R1, =0x01   ;Stores the subtrah
+                                                            end
     9 0000000C E0422000 
                        LOOP1   SUB              R2, R2, R0
    10 00000010 E3520000        CMP              R2, #0
@@ -22,7 +26,8 @@ ARM Macro Assembler    Page 1
    15 00000024 EAFFFFF8        B                LOOP1
    16 00000028         LOOP
    17 00000028 E3A03101        LDR              R3, =0x40000000
-   18 0000002C E5831000        STR              R1, [R3]
+   18 0000002C E5831000        STR              R1, [R3]    ;Storing result in 
+                                                            memory
    19 00000030         
    20 00000030 EAFFFFFE 
                        STOP    B                STOP

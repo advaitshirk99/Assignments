@@ -6,56 +6,49 @@ ARM Macro Assembler    Page 1
 
     1 00000000         ;program to find the factorial of a number
     2 00000000         
-    3 00000000                 AREA             RESET, DATA, READONLY
-    4 00000000                 EXPORT           __Vectors
+    3 00000000                 AREA             mycode, CODE, READONLY
+    4 00000000                 ENTRY
     5 00000000         
-    6 00000000         __Vectors
-    7 00000000 100000FF        DCD              0x100000FF  ;Stack pointer valu
-                                                            e when stack is emp
-                                                            ty
-    8 00000004 00000000        DCD              Reset_Handler ;Reset vector
-    9 00000008         
-   10 00000008                 ALIGN
-   11 00000008         
-   12 00000008                 AREA             mycode, CODE, READONLY
-   13 00000000                 EXPORT           Reset_Handler
-   14 00000000                 ENTRY
-   15 00000000         
-   16 00000000         Reset_Handler
-   17 00000000 E3A00005        LDR              R0, =05     ;     ;Loading the 
+    6 00000000         Main
+    7 00000000 E3A00005        LDR              R0, =05     ;     ;Loading the 
                                                             number who's factor
                                                             ial is to be taken 
                                                             into R0
-   18 00000004 EB000000        BL               FACTORIAL
-   19 00000008 EAFFFFFE 
+    8 00000004 E3A06101        LDR              R6, =0x40000000 ;Loading the ad
+                                                            dress of the result
+                                                            
+    9 00000008 EB000001        BL               FACTORIAL
+   10 0000000C E5860000        STR              R0, [R6]    ;Storing the result
+                                                             in memory
+   11 00000010 EAFFFFFE 
                        STOP    B                STOP
-   20 0000000C         
-   21 0000000C         FACTORIAL
-   22 0000000C E92D4010        PUSH             {R4, LR}    ;pushing R4 and lr 
+   12 00000014         
+   13 00000014         FACTORIAL
+   14 00000014 E92D4010        PUSH             {R4, LR}    ;pushing R4 and lr 
                                                             on the top of the s
                                                             tack
-   23 00000010 E1A04000        MOV              R4, R0      ;Make a copy of R0
-   24 00000014 E3500000        CMP              R0, #0      ;Compare R0 with 0
-   25 00000018 1A000001        BNE              NOT_ZERO    ;branch to NOT_ZERO
+   15 00000018 E1A04000        MOV              R4, R0      ;Make a copy of R0
+   16 0000001C E3500000        CMP              R0, #0      ;Compare R0 with 0
+   17 00000020 1A000001        BNE              NOT_ZERO    ;branch to NOT_ZERO
                                                              if not equal
-   26 0000001C E3A00001        MOV              R0, #1      ;R0 = 1
-   27 00000020 EA000003        B                LAST        ;branch to LAST
-   28 00000024         
-   29 00000024         NOT_ZERO
-   30 00000024 E2400001        SUB              R0, R0, #1  ;Subtract 1 from R0
+   18 00000024 E3A00001        MOV              R0, #1      ;R0 = 1
+   19 00000028 EA000003        B                LAST        ;branch to LAST
+   20 0000002C         
+   21 0000002C         NOT_ZERO
+   22 0000002C E2400001        SUB              R0, R0, #1  ;Subtract 1 from R0
                                                              and store it back 
                                                             in R0
-   31 00000028 EBFFFFF7        BL               FACTORIAL   ;Branch link to FAC
+   23 00000030 EBFFFFF7        BL               FACTORIAL   ;Branch link to FAC
                                                             TORIAL, call the fu
                                                             nction recursively
-   32 0000002C E1A01004        MOV              R1, R4
-   33 00000030 E0000091        MUL              R0, R1, R0  ;R0 = R0 * R1
-   34 00000034         
-   35 00000034         LAST
-   36 00000034 E8BD4010        POP              {R4, LR}    ;popping R4 and LR 
+   24 00000034 E1A01004        MOV              R1, R4
+   25 00000038 E0000091        MUL              R0, R1, R0  ;R0 = R0 * R1
+   26 0000003C         
+   27 0000003C         LAST
+   28 0000003C E8BD4010        POP              {R4, LR}    ;popping R4 and LR 
                                                             out of the stack
-   37 00000038 E12FFF1E        BX               LR
-   38 0000003C                 END
+   29 00000040 E12FFF1E        BX               LR
+   30 00000044                 END
 Command Line: --debug --xref --diag_suppress=9931 --apcs=interwork --depend=.\o
 bjects\factorial_with_subroutine.d -o.\objects\factorial_with_subroutine.o -IC:
 \Keil_v5\ARM\RV31\INC -IC:\Keil_v5\ARM\CMSIS\Include -IC:\Keil_v5\ARM\INC\Phili
@@ -67,78 +60,54 @@ ps --predefine="__EVAL SETA 1" --predefine="__UVISION_VERSION SETA 529" --list=
 ARM Macro Assembler    Page 1 Alphabetic symbol ordering
 Relocatable symbols
 
-RESET 00000000
-
-Symbol: RESET
-   Definitions
-      At line 3 in file factorial_with_subroutine.s
-   Uses
-      None
-Comment: RESET unused
-__Vectors 00000000
-
-Symbol: __Vectors
-   Definitions
-      At line 6 in file factorial_with_subroutine.s
-   Uses
-      At line 4 in file factorial_with_subroutine.s
-Comment: __Vectors used once
-2 symbols
-
-
-
-ARM Macro Assembler    Page 1 Alphabetic symbol ordering
-Relocatable symbols
-
-FACTORIAL 0000000C
+FACTORIAL 00000014
 
 Symbol: FACTORIAL
    Definitions
-      At line 21 in file factorial_with_subroutine.s
+      At line 13 in file factorial_with_subroutine.s
    Uses
-      At line 18 in file factorial_with_subroutine.s
-      At line 31 in file factorial_with_subroutine.s
+      At line 9 in file factorial_with_subroutine.s
+      At line 23 in file factorial_with_subroutine.s
 
-LAST 00000034
+LAST 0000003C
 
 Symbol: LAST
    Definitions
-      At line 35 in file factorial_with_subroutine.s
-   Uses
       At line 27 in file factorial_with_subroutine.s
+   Uses
+      At line 19 in file factorial_with_subroutine.s
 Comment: LAST used once
-NOT_ZERO 00000024
+Main 00000000
+
+Symbol: Main
+   Definitions
+      At line 6 in file factorial_with_subroutine.s
+   Uses
+      None
+Comment: Main unused
+NOT_ZERO 0000002C
 
 Symbol: NOT_ZERO
    Definitions
-      At line 29 in file factorial_with_subroutine.s
+      At line 21 in file factorial_with_subroutine.s
    Uses
-      At line 25 in file factorial_with_subroutine.s
+      At line 17 in file factorial_with_subroutine.s
 Comment: NOT_ZERO used once
-Reset_Handler 00000000
-
-Symbol: Reset_Handler
-   Definitions
-      At line 16 in file factorial_with_subroutine.s
-   Uses
-      At line 8 in file factorial_with_subroutine.s
-      At line 13 in file factorial_with_subroutine.s
-
-STOP 00000008
+STOP 00000010
 
 Symbol: STOP
    Definitions
-      At line 19 in file factorial_with_subroutine.s
+      At line 11 in file factorial_with_subroutine.s
    Uses
-      At line 19 in file factorial_with_subroutine.s
+      At line 11 in file factorial_with_subroutine.s
 Comment: STOP used once
 mycode 00000000
 
 Symbol: mycode
    Definitions
-      At line 12 in file factorial_with_subroutine.s
+      At line 3 in file factorial_with_subroutine.s
    Uses
       None
 Comment: mycode unused
 6 symbols
-340 symbols in table
+338 symbols in table

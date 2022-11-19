@@ -22,28 +22,33 @@ ARM Macro Assembler    Page 1
    14 00000000                 ENTRY
    15 00000000         
    16 00000000         Reset_Handler
-   17 00000000 E3A00007        MOV              R0, #07     ;Loading the number
+   17 00000000 E3A05101        LDR              R5,=0x40000000 ;Result will be 
+                                                            stored in this dest
+                                                            ination address
+   18 00000004 E3A00007        MOV              R0, #07     ;Loading the number
                                                              who's factorial is
                                                              to be calculated
-   18 00000004 E1A01000        MOV              R1, R0      ;Copy the content o
+   19 00000008 E1A01000        MOV              R1, R0      ;Copy the content o
                                                             f R0 to R1
-   19 00000008         
-   20 00000008 E2511001 
+   20 0000000C         
+   21 0000000C E2511001 
                        FACT    SUBS             R1, R1, #1  ;R1 = R1 - 1
-   21 0000000C E3510001        CMP              R1, #1      ;Comparing R1 with 
+   22 00000010 E3510001        CMP              R1, #1      ;Comparing R1 with 
                                                             1
-   22 00000010 0A000002        BEQ              STOP        ;Branch to STOP if 
+   23 00000014 0A000002        BEQ              DONE        ;Branch to STOP if 
                                                             equal
-   23 00000014 E0030190        MUL              R3, R0, R1  ;Store the product 
+   24 00000018 E0030190        MUL              R3, R0, R1  ;Store the product 
                                                             of R0 and R1 in R3
-   24 00000018 E1A00003        MOV              R0, R3      ;Copy the result fr
+   25 0000001C E1A00003        MOV              R0, R3      ;Copy the result fr
                                                             om R3 to R0
-   25 0000001C 1AFFFFF9        BNE              FACT        ;Branch to FACT if 
+   26 00000020 1AFFFFF9        BNE              FACT        ;Branch to FACT if 
                                                             not equal
-   26 00000020         
-   27 00000020 EAFFFFFE 
+   27 00000024         
+   28 00000024 E5853000 
+                       DONE    STR              R3, [R5]
+   29 00000028 EAFFFFFE 
                        STOP    B                STOP
-   28 00000024                 END
+   30 0000002C                 END
 Command Line: --debug --xref --diag_suppress=9931 --apcs=interwork --depend=.\o
 bjects\factorial.d -o.\objects\factorial.o -IC:\Keil_v5\ARM\RV31\INC -IC:\Keil_
 v5\ARM\CMSIS\Include -IC:\Keil_v5\ARM\INC\Philips --predefine="__EVAL SETA 1" -
@@ -78,13 +83,21 @@ Comment: __Vectors used once
 ARM Macro Assembler    Page 1 Alphabetic symbol ordering
 Relocatable symbols
 
-FACT 00000008
+DONE 00000024
+
+Symbol: DONE
+   Definitions
+      At line 28 in file factorial.s
+   Uses
+      At line 23 in file factorial.s
+Comment: DONE used once
+FACT 0000000C
 
 Symbol: FACT
    Definitions
-      At line 20 in file factorial.s
+      At line 21 in file factorial.s
    Uses
-      At line 25 in file factorial.s
+      At line 26 in file factorial.s
 Comment: FACT used once
 Reset_Handler 00000000
 
@@ -95,15 +108,14 @@ Symbol: Reset_Handler
       At line 8 in file factorial.s
       At line 13 in file factorial.s
 
-STOP 00000020
+STOP 00000028
 
 Symbol: STOP
    Definitions
-      At line 27 in file factorial.s
+      At line 29 in file factorial.s
    Uses
-      At line 22 in file factorial.s
-      At line 27 in file factorial.s
-
+      At line 29 in file factorial.s
+Comment: STOP used once
 mycode 00000000
 
 Symbol: mycode
@@ -112,5 +124,5 @@ Symbol: mycode
    Uses
       None
 Comment: mycode unused
-4 symbols
-338 symbols in table
+5 symbols
+339 symbols in table

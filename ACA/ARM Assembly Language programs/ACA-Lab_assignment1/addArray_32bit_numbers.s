@@ -1,4 +1,4 @@
-;read and store 5 32-bit numbers
+;read array of 32-bit numbers, add them, and store in memory
 
 		AREA RESET, DATA, READONLY
 		EXPORT __Vectors

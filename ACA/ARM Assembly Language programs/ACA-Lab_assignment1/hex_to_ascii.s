@@ -1,18 +1,9 @@
 ;program to convert hex number to ascii value
-		AREA RESET, DATA, READONLY
-		EXPORT __Vectors
-			
-__Vectors
-		DCD 	0x100000FF					;Stack pointer value when stack is empty
-		DCD		Reset_Handler				;Reset vector
-		
-		ALIGN
 			
 		AREA mycode, CODE, READONLY
-		EXPORT Reset_Handler
 		ENTRY
 
-Reset_Handler
+Main
 		LDR 	R0, =0x40000000				;Get the memory loc of Hex Digit source
 		LDR 	R5, [R0]
 		;LDR		R6, =DST

@@ -8,9 +8,9 @@ ARM Macro Assembler    Page 1
     2 00000000                 AREA             Reset, CODE, READONLY
     3 00000000                 ENTRY
     4 00000000         Main
-    5 00000000 E59F002C        LDR              R0, =Data1
+    5 00000000 E59F0034        LDR              R0, =Data1
     6 00000004 E0211001        EOR              R1,R1,R1
-    7 00000008 E59F4020        LDR              R4, CharCount
+    7 00000008 E59F4028        LDR              R4, CharCount
     8 0000000C         
     9 0000000C         Loop
    10 0000000C E4D02001        LDRB             R2, [R0], #1
@@ -25,14 +25,17 @@ ARM Macro Assembler    Page 1
    18 00000028         
    19 00000028         Data1
    20 00000028 48 65 6C 
-              6C 6F 0D         DCB              "Hello", CR
-   21 0000002E 00 00           ALIGN
-   22 00000030         
-   23 00000030         CharCount
-   24 00000030 40000000        DCD              &40000000
-   25 00000034 0000000D 
+              6C 6F 20 
+              74 68 65 
+              72 65 21 
+              0D               DCB              "Hello there!", CR
+   21 00000035 00 00 00        ALIGN
+   22 00000038         
+   23 00000038         CharCount
+   24 00000038 40000000        DCD              &40000000
+   25 0000003C 0000000D 
                        CR      EQU              0x0D
-   26 00000034                 END
+   26 0000003C                 END
               00000000 
 Command Line: --debug --xref --diag_suppress=9931 --apcs=interwork --depend=.\o
 bjects\length_of_string.d -o.\objects\length_of_string.o -IC:\Keil_v5\ARM\RV31\
@@ -45,7 +48,7 @@ of_string.lst length_of_string.s
 ARM Macro Assembler    Page 1 Alphabetic symbol ordering
 Relocatable symbols
 
-CharCount 00000030
+CharCount 00000038
 
 Symbol: CharCount
    Definitions

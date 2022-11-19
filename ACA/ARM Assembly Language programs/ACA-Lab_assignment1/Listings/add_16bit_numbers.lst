@@ -22,12 +22,12 @@ ARM Macro Assembler    Page 1
    14 00000000                 ENTRY
    15 00000000         
    16 00000000         Reset_Handler
-   17 00000000 E59F001C        LDR              R0, =Value1 ;Load the address o
+   17 00000000 E59F0020        LDR              R0, =Value1 ;Load the address o
                                                             f value1
    18 00000004 E1D010B0        LDRH             R1, [R0]    ;Store value locate
                                                             d at address pointe
                                                             d by R0
-   19 00000008 E59F0018        LDR              R0, =Value2 ;Load address of Va
+   19 00000008 E59F001C        LDR              R0, =Value2 ;Load address of Va
                                                             lue2
    20 0000000C E1D020B0        LDRH             R2, [R0]    ;Store value locate
                                                             d at address pointe
@@ -35,7 +35,7 @@ ARM Macro Assembler    Page 1
    21 00000010 E0813002        ADD              R3, R1, R2  ;Store the sum of R
                                                             1 and R2 in R3
    22 00000014         
-   23 00000014 E59F0010        LDR              R0, =Result ;Load the address o
+   23 00000014 E59F0014        LDR              R0, =Result ;Load the address o
                                                             f Result
    24 00000018 E1C030B0        STRH             R3, [R0]    ;Store the result i
                                                             n code memory
@@ -44,13 +44,15 @@ ARM Macro Assembler    Page 1
                        STOP    B                STOP
    27 00000020         
    28 00000020 34 12   Value1  DCW              0x1234
-   29 00000022 32 54   Value2  DCW              0x5432
-   30 00000024         
-   31 00000024 00000000 
+   29 00000022 00 00           ALIGN
+   30 00000024 32 54   Value2  DCW              0x5432
+   31 00000026 00 00           ALIGN
+   32 00000028         
+   33 00000028 00000000 
               00000000 
               00000000         AREA             data, DATA, READWRITE
-   32 00000000 00 00   Result  DCW              0
-   33 00000002                 END
+   34 00000000 00 00   Result  DCW              0
+   35 00000002                 END
 Command Line: --debug --xref --diag_suppress=9931 --apcs=interwork --depend=.\o
 bjects\add_16bit_numbers.d -o.\objects\add_16bit_numbers.o -IC:\Keil_v5\ARM\RV3
 1\INC -IC:\Keil_v5\ARM\CMSIS\Include -IC:\Keil_v5\ARM\INC\Philips --predefine="
@@ -110,11 +112,11 @@ Symbol: Value1
    Uses
       At line 17 in file add_16bit_numbers.s
 Comment: Value1 used once
-Value2 00000022
+Value2 00000024
 
 Symbol: Value2
    Definitions
-      At line 29 in file add_16bit_numbers.s
+      At line 30 in file add_16bit_numbers.s
    Uses
       At line 19 in file add_16bit_numbers.s
 Comment: Value2 used once
@@ -137,7 +139,7 @@ Result 00000000
 
 Symbol: Result
    Definitions
-      At line 32 in file add_16bit_numbers.s
+      At line 34 in file add_16bit_numbers.s
    Uses
       At line 23 in file add_16bit_numbers.s
 Comment: Result used once
@@ -145,7 +147,7 @@ data 00000000
 
 Symbol: data
    Definitions
-      At line 31 in file add_16bit_numbers.s
+      At line 33 in file add_16bit_numbers.s
    Uses
       None
 Comment: data unused

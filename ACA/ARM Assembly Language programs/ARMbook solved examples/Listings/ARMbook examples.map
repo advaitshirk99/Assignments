@@ -1,0 +1,32 @@
+Component: ARM Compiler 5.06 update 6 (build 750) Tool: armlink [4d35ed]
+
+==============================================================================
+
+Section Cross References
+
+    decimal_to_nibble.o(Program) refers to decimal_to_nibble.o(Data1) for Char
+    decimal_to_nibble.o(Program) refers to decimal_to_nibble.o(Data2) for Result
+
+
+==============================================================================
+
+Image Symbol Table
+
+    Local Symbols
+
+    Symbol Name                              Value     Ov Type        Size  Object(Section)
+
+    Program                                  0x00000000   Section       36  decimal_to_nibble.o(Program)
+    decimal_to_nibble.s                      0x00000000   Number         0  decimal_to_nibble.o ABSOLUTE
+    Data1                                    0x40000000   Section        4  decimal_to_nibble.o(Data1)
+    Char                                     0x40000000   Data           1  decimal_to_nibble.o(Data1)
+    Data2                                    0x40000004   Section        4  decimal_to_nibble.o(Data2)
+    Result                                   0x40000004   Data           4  decimal_to_nibble.o(Data2)
+
+    Global Symbols
+
+    Symbol Name                              Value     Ov Type        Size  Object(Section)
+
+    BuildAttributes$$THM_ISAv1$ARM_ISAv4$S$PE$A:L22$X:L11$S22$IEEE1$IW$USESV6$~STKCKD$USESV7$~SHL$OSPACE$EBA8$STANDARDLIB$PRES8$EABIv2 0x00000000   Number         0  anon$$obj.o ABSOLUTE
+
+

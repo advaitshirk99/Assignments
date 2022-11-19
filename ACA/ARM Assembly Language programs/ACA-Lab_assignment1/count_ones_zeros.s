@@ -30,4 +30,3 @@ JUMP	MOVS	R1, R1, LSR #1				;Logical right shift by 1 bit and set carry if carry
 STOP	B		STOP
 		END
 		
-

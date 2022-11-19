@@ -1,0 +1,223 @@
+
+
+
+ARM Macro Assembler    Page 1 
+
+
+    1 00000000                 AREA             MYCODE, CODE, READONLY
+    2 00000000         
+    3 00000000                 ENTRY
+    4 00000000                 EXPORT           main
+    5 00000000         
+    6 00000000         main
+    7 00000000 E3A00001        MOV              R0, #1      ;Start index
+    8 00000004 E1A00100        LSL              R0, R0, #2
+    9 00000008 E3A0100A        MOV              R1, #10     ;Size of array
+   10 0000000C E1A01101        LSL              R1, R1, #2
+   11 00000010 EB00000B        BL               INSERTION
+   12 00000014         
+   13 00000014 E59F00A0        LDR              R0, =ARRAY
+   14 00000018 E5901000        LDR              R1, [R0, #0]
+   15 0000001C E5902004        LDR              R2, [R0, #4]
+   16 00000020 E5903008        LDR              R3, [R0, #8]
+   17 00000024 E590400C        LDR              R4, [R0, #12]
+   18 00000028 E5905010        LDR              R5, [R0, #16]
+   19 0000002C E5906014        LDR              R6, [R0, #20]
+   20 00000030 E5907018        LDR              R7, [R0, #24]
+   21 00000034 E590801C        LDR              R8, [R0, #28]
+   22 00000038 E5909020        LDR              R9, [R0, #32]
+   23 0000003C E590A024        LDR              R10, [R0, #36]
+   24 00000040 EA00001C        B                STOP
+   25 00000044         
+   26 00000044         INSERTION
+   27 00000044 E24DD00C        SUB              SP, SP, #12 ;Mov stack for keep
+                                                             current parameter
+   28 00000048 E58DE008        STR              LR, [SP, #8] ;Save return addre
+                                                            ss
+   29 0000004C E58D0004        STR              R0, [SP, #4] ;Save start index 
+                                                            argrument
+   30 00000050 E58D1000        STR              R1, [SP, #0] ;Save size of arra
+                                                            y argrument
+   31 00000054 E1500001        CMP              R0, R1      ;If start index = s
+                                                            ize of array
+   32 00000058 0A000013        BEQ              RET         ;Return to main
+   33 0000005C E3500000        CMP              R0, #0      ;If start index = 0
+                                                            
+   34 00000060 0A000011        BEQ              RET         ;Return to main
+   35 00000064         
+   36 00000064 E59FC050        LDR              R12, =ARRAY ;Get address of arr
+                                                            ay
+   37 00000068 E79C2000        LDR              R2, [R12, R0] ;Load array[start
+                                                            ] to R2
+   38 0000006C E2404004        SUB              R4, R0, #4  ;Get value of start
+                                                            -1 in R4
+   39 00000070 E79C3004        LDR              R3, [R12, R4] ;Load array[start
+                                                            -1] to R3
+   40 00000074 E1520003        CMP              R2, R3      ;if array[start]<ar
+                                                            ray[start-1]
+   41 00000078 BA000004        BLT              SWAP        ;swap it
+   42 0000007C         
+   43 0000007C         RECUR
+   44 0000007C E59D0004        LDR              R0, [SP, #4] ;Load start index 
+                                                            from this recursion
+                                                            
+   45 00000080 E59D1000        LDR              R1, [SP, #0] ;Load size from th
+                                                            is recursion
+
+
+
+ARM Macro Assembler    Page 2 
+
+
+   46 00000084 E2800004        ADD              R0, R0, #4  ;increse start  
+   47 00000088 EBFFFFED        BL               INSERTION   ;call recursion for
+                                                             next number
+   48 0000008C EA000006        B                RET         ;return when end fu
+                                                            nction
+   49 00000090         
+   50 00000090         SWAP
+   51 00000090 E1A05002        MOV              R5, R2      ;temp = array[start
+                                                            ]
+   52 00000094 E78C3000        STR              R3, [R12, R0] ;array[start] = a
+                                                            rray[start-1]
+   53 00000098 E78C5004        STR              R5, [R12, R4] ;arrar[start-1] =
+                                                             temp
+   54 0000009C E1A01000        MOV              R1, R0      ;pass start to size
+                                                            
+   55 000000A0 E2400004        SUB              R0, R0, #4  ;decrese start
+   56 000000A4 EBFFFFE6        BL               INSERTION   ;call recursion for
+                                                             prev number
+   57 000000A8         
+   58 000000A8 EAFFFFF3        B                RECUR       ;back to current fu
+                                                            nction call
+   59 000000AC         
+   60 000000AC         RET
+   61 000000AC E59DE008        LDR              LR, [SP, #8] ;load LR to return
+                                                             caller
+   62 000000B0 E28DD00C        ADD              SP, SP, #12 ;pop stack
+   63 000000B4 E1A0D00E        MOV              SP, LR      ;set LR to PC
+   64 000000B8         
+   65 000000B8         STOP
+   66 000000B8 EAFFFFFE        B                STOP
+   67 000000BC         
+   68 000000BC 00000000 
+              00000000         AREA             DATAARR, DATA, READWRITE
+   69 00000000         
+   70 00000000 00000008 
+              00000002 
+              00000003 
+              00000000 
+              00000001 
+              00000004 
+              00000009 
+              00000005 
+              00000006 
+              00000007 ARRAY   DCD              8,2,3,0,1,4,9,5,6,7 
+                                                            ;Array for sorting
+   71 00000028         
+   72 00000028                 END                          ;End of the program
+                                                            
+Command Line: --debug --xref --diag_suppress=9931 --apcs=interwork --depend=.\o
+bjects\insertionsort.d -o.\objects\insertionsort.o -IC:\Keil_v5\ARM\RV31\INC -I
+C:\Keil_v5\ARM\CMSIS\Include -IC:\Keil_v5\ARM\INC\Philips --predefine="__EVAL S
+ETA 1" --predefine="__UVISION_VERSION SETA 529" --list=.\listings\insertionsort
+.lst insertionSort.s
+
+
+
+ARM Macro Assembler    Page 1 Alphabetic symbol ordering
+Relocatable symbols
+
+INSERTION 00000044
+
+Symbol: INSERTION
+   Definitions
+      At line 26 in file insertionSort.s
+   Uses
+      At line 11 in file insertionSort.s
+      At line 47 in file insertionSort.s
+      At line 56 in file insertionSort.s
+
+MYCODE 00000000
+
+Symbol: MYCODE
+   Definitions
+      At line 1 in file insertionSort.s
+   Uses
+      None
+Comment: MYCODE unused
+RECUR 0000007C
+
+Symbol: RECUR
+   Definitions
+      At line 43 in file insertionSort.s
+   Uses
+      At line 58 in file insertionSort.s
+Comment: RECUR used once
+RET 000000AC
+
+Symbol: RET
+   Definitions
+      At line 60 in file insertionSort.s
+   Uses
+      At line 32 in file insertionSort.s
+      At line 34 in file insertionSort.s
+      At line 48 in file insertionSort.s
+
+STOP 000000B8
+
+Symbol: STOP
+   Definitions
+      At line 65 in file insertionSort.s
+   Uses
+      At line 24 in file insertionSort.s
+      At line 66 in file insertionSort.s
+
+SWAP 00000090
+
+Symbol: SWAP
+   Definitions
+      At line 50 in file insertionSort.s
+   Uses
+      At line 41 in file insertionSort.s
+Comment: SWAP used once
+main 00000000
+
+Symbol: main
+   Definitions
+      At line 6 in file insertionSort.s
+   Uses
+
+
+
+ARM Macro Assembler    Page 2 Alphabetic symbol ordering
+Relocatable symbols
+
+      At line 4 in file insertionSort.s
+Comment: main used once
+7 symbols
+
+
+
+ARM Macro Assembler    Page 1 Alphabetic symbol ordering
+Relocatable symbols
+
+ARRAY 00000000
+
+Symbol: ARRAY
+   Definitions
+      At line 70 in file insertionSort.s
+   Uses
+      At line 13 in file insertionSort.s
+      At line 36 in file insertionSort.s
+
+DATAARR 00000000
+
+Symbol: DATAARR
+   Definitions
+      At line 68 in file insertionSort.s
+   Uses
+      None
+Comment: DATAARR unused
+2 symbols
+343 symbols in table

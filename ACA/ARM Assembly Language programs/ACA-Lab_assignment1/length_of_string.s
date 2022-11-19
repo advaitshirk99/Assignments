@@ -17,7 +17,7 @@ Done
 STOP	B		STOP
     
 Data1
-		DCB 	"Hello", CR
+		DCB 	"Hello there!", CR
 		ALIGN
         
 CharCount 

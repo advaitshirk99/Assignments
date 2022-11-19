@@ -1,21 +1,13 @@
 ;program to find the factorial of a number
 
-		AREA RESET, DATA, READONLY
-		EXPORT __Vectors
-			
-__Vectors
-		DCD 	0x100000FF					;Stack pointer value when stack is empty
-		DCD		Reset_Handler				;Reset vector
-		
-		ALIGN
-			
 		AREA mycode, CODE, READONLY
-		EXPORT Reset_Handler
 		ENTRY
 
-Reset_Handler
+Main
 		LDR		R0, =05;					;Loading the number who's factorial is to be taken into R0
+		LDR		R6, =0x40000000				;Loading the address of the result
 		BL 		FACTORIAL
+		STR		R0, [R6]					;Storing the result in memory
 STOP	B		STOP
 
 FACTORIAL
