@@ -425,6 +425,41 @@
               <FileType>2</FileType>
               <FilePath>.\Startup.s</FilePath>
             </File>
+            <File>
+              <FileName>lcd_header.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>.\lcd_header.h</FilePath>
+            </File>
+            <File>
+              <FileName>lcd_function.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\lcd_function.c</FilePath>
+            </File>
+            <File>
+              <FileName>main.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\main.c</FilePath>
+            </File>
+            <File>
+              <FileName>pll.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\pll.c</FilePath>
+            </File>
+            <File>
+              <FileName>uart.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\uart.c</FilePath>
+            </File>
+            <File>
+              <FileName>pll.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>.\pll.h</FilePath>
+            </File>
+            <File>
+              <FileName>uart.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>.\uart.h</FilePath>
+            </File>
           </Files>
         </Group>
       </Groups>
