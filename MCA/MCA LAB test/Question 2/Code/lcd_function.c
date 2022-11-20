@@ -13,12 +13,13 @@ void delay(unsigned int t){
 
 void cmd(unsigned char command){
 	
-	IOPIN1 = ((IOPIN1 & 0xFFFF00FF) | (command << 8)); 	//Sending the command through port0's 8 - 15 pins
-	IOSET1 = 0x00000040;																//Setting pin P0.6 of lpc2148 to high, so that EN = 1 on LCD
-	IOCLR1 = 0x00000030;																//Setting pin P0.4 and P0.5 to low, so that RS = 0, RW = 0 on LCD
+	IO1PIN&=0x00;																			 	//Sending the command through port0's 8 - 15 pins
+	IO1PIN=(command<<16);																//Setting pin P0.6 of lpc2148 to high, so that EN = 1 on LCD
+	IO1CLR|=bit(25);																		//Setting pin P0.4 and P0.5 to low, so that RS = 0, RW = 0 on LCD
+	IO1CLR|=bit(26);
+	IO1SET|=bit(27);
 	delay(2);
-	IOCLR1 = 0x00000040;																//Setting pin P0.6 of lpc2148 to low, so that EN = 0, RW = 0, RS = 0 on LCD
-	delay(5);
+	IO1CLR|=bit(27);																		//Setting pin P0.6 of lpc2148 to low, so that EN = 0, RW = 0, RS = 0 on LCD
 }
 
 void lcd_init(void){
@@ -34,26 +35,19 @@ void lcd_init(void){
 
 void display_character(char msg){
 
-		IOPIN1 = ((IOPIN1 & 0xFFFF00FF) | (msg << 8));	
-		IOSET1 = 0x00000050;															//Setting pin P0.4 and P0.6 high, so that RS = 1, EN = 1 on LCD
-		IOCLR1 = 0x00000020;															//Setting pin P0.5 low, so that RW = 0
-		delay(2);
-		IOCLR1 = 0x00000040;															//Setting pin P0.6 to low, so that EN = 0, RS and RW stay unchanged on LCD
-		delay(5);
+    IO1PIN&=0x00;
+    IO1PIN=(msg<<16);
+    IO1SET|=bit(25);               
+    IO1CLR|=bit(26);               
+    IO1SET|=bit(27);              
+    delay(2);
+    IO1CLR|=bit(27);  
 }
 
 void display_string(char *msg){
 
-	uint8_t i = 0;
-	while(msg[i] != 0){
-	
-		IOPIN1 = ((IOPIN1 & 0xFFFF00FF) | (msg[i] << 8));	
-		IOSET1 = 0x00000050;															//Setting pin P0.4 and P0.6 high, so that RS = 1, EN = 1 on LCD
-		IOCLR1 = 0x00000020;															//Setting pin P0.5 low, so that RW = 0
-		delay(2);
-		IOCLR1 = 0x00000040;															//Setting pin P0.6 to low, so that EN = 0, RS and RW stay unchanged on LCD
-		delay(5);
-		i++;
+	 while(*msg!='\0'){
+		 display_character(*msg++);
 	}
 }
 

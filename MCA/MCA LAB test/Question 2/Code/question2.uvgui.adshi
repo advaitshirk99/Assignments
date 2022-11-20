@@ -1865,9 +1865,9 @@
       <ActiveTab>0</ActiveTab>
       <Doc>
         <Name>.\main.c</Name>
-        <ColumnNumber>15</ColumnNumber>
-        <TopLine>1</TopLine>
-        <CurrentLine>8</CurrentLine>
+        <ColumnNumber>17</ColumnNumber>
+        <TopLine>6</TopLine>
+        <CurrentLine>28</CurrentLine>
         <Folding>1</Folding>
         <ContractedFolders></ContractedFolders>
         <PaneID>0</PaneID>
@@ -1892,9 +1892,9 @@
       </Doc>
       <Doc>
         <Name>.\lcd_function.c</Name>
-        <ColumnNumber>19</ColumnNumber>
-        <TopLine>1</TopLine>
-        <CurrentLine>16</CurrentLine>
+        <ColumnNumber>3</ColumnNumber>
+        <TopLine>37</TopLine>
+        <CurrentLine>51</CurrentLine>
         <Folding>1</Folding>
         <ContractedFolders></ContractedFolders>
         <PaneID>0</PaneID>
@@ -1910,9 +1910,9 @@
       </Doc>
       <Doc>
         <Name>.\lcd_header.h</Name>
-        <ColumnNumber>9</ColumnNumber>
+        <ColumnNumber>21</ColumnNumber>
         <TopLine>1</TopLine>
-        <CurrentLine>3</CurrentLine>
+        <CurrentLine>8</CurrentLine>
         <Folding>1</Folding>
         <ContractedFolders></ContractedFolders>
         <PaneID>0</PaneID>

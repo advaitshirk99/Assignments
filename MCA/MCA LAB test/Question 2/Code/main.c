@@ -29,5 +29,6 @@ int main(){
 		cmd(0x80);
 		delay_milliseconds(20);
 	}
+	return 0;
 }
 
