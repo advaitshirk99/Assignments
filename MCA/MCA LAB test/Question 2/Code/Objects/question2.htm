@@ -3,9 +3,9 @@
 <title>Static Call Graph - [.\Objects\question2.axf]</title></head>
 <body><HR>
 <H1>Static Call Graph for image .\Objects\question2.axf</H1><HR>
-<BR><P>#&#060CALLGRAPH&#062# ARM Linker, 5060750: Last Updated: Sun Nov 20 10:27:50 2022
+<BR><P>#&#060CALLGRAPH&#062# ARM Linker, 5060750: Last Updated: Sun Nov 20 11:21:30 2022
 <BR><P>
-<H3>Maximum Stack Usage =        116 bytes + Unknown(Functions without stacksize, Untraceable Function Pointers)</H3><H3>
+<H3>Maximum Stack Usage =         36 bytes + Unknown(Functions without stacksize, Untraceable Function Pointers)</H3><H3>
 Call chain for Maximum Stack Depth:</H3>
 main &rArr; lcd_init &rArr; cmd
 <P>
@@ -207,8 +207,7 @@ Global Symbols
 </UL>
 
 <P><STRONG><a name="[16]"></a>delay</STRONG> (ARM, 52 bytes, Stack size 0 bytes, lcd_function.o(i.delay))
-<BR><BR>[Called By]<UL><LI><a href="#[18]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;lcd_init
-<LI><a href="#[17]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;display_string
+<BR><BR>[Called By]<UL><LI><a href="#[17]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;display_string
 <LI><a href="#[15]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;cmd
 </UL>
 
@@ -232,17 +231,16 @@ Global Symbols
 <BR><BR>[Called By]<UL><LI><a href="#[2]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;main
 </UL>
 
-<P><STRONG><a name="[18]"></a>lcd_init</STRONG> (ARM, 72 bytes, Stack size 4 bytes, lcd_function.o(i.lcd_init))
+<P><STRONG><a name="[18]"></a>lcd_init</STRONG> (ARM, 64 bytes, Stack size 4 bytes, lcd_function.o(i.lcd_init))
 <BR><BR>[Stack]<UL><LI>Max Depth = 12<LI>Call Chain = lcd_init &rArr; cmd
 </UL>
-<BR>[Calls]<UL><LI><a href="#[16]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;delay
-<LI><a href="#[15]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;cmd
+<BR>[Calls]<UL><LI><a href="#[15]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;cmd
 </UL>
 <BR>[Called By]<UL><LI><a href="#[2]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;main
 </UL>
 
-<P><STRONG><a name="[2]"></a>main</STRONG> (ARM, 184 bytes, Stack size 104 bytes, main.o(i.main))
-<BR><BR>[Stack]<UL><LI>Max Depth = 116<LI>Call Chain = main &rArr; lcd_init &rArr; cmd
+<P><STRONG><a name="[2]"></a>main</STRONG> (ARM, 160 bytes, Stack size 24 bytes, main.o(i.main))
+<BR><BR>[Stack]<UL><LI>Max Depth = 36<LI>Call Chain = main &rArr; lcd_init &rArr; cmd
 </UL>
 <BR>[Calls]<UL><LI><a href="#[1b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;receive_char_uart0
 <LI><a href="#[1a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;init_uart0

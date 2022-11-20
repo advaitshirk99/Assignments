@@ -5,10 +5,10 @@
 #include "timer.h"
 
 int main(){
-	PINSEL0 |= 0x004;											//Setting Pins 0.0 and 0.1 as RxD and TxD, and remaining pins as GPIO pins
-	IODIR0 |= 0xFFD;											//Pins 0.0 - 0.11 as output pins, and 0.1 as input pin
+	IODIR0 = 0x0;
+	IODIR1 = 0xFFFFFFFF;									//port1 as output
 	char a;
-	char str[100];
+	char str[20];
 	unsigned int i=0;
 	init_pll();
 	init_uart0();
