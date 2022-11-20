@@ -21,7 +21,7 @@ void cmd(unsigned char command){
 	delay(5);
 }
 
-void init(void){
+void lcd_init(void){
 
 	IODIR0 = 0x0000FFF0;																//Setting pin P0.4 to P0.15 as output
 	delay(10);
