@@ -1,0 +1,27 @@
+	AREA prg,CODE,READONLY
+	ENTRY
+	
+	LDR 	R0,=0x40000000 
+	
+REPEAT
+	MOV		R3,R0 
+	MOV 	R2,#1
+AGAIN
+	LDRB	R6,[R3] 
+	LDRB	R7,[R3,#1]
+	CMP 	R6,	R7
+	BLE		SKIP 
+	
+	STRB	R6,[R3,#1] 
+	STRB 	R7,[R3]
+	ADD		R2,#1
+l	B		REPEAT
+	
+SKIP
+	ADD		R2,#1
+	ADD		R3,#1 
+	CMP		R2,#5    ; sorting for 5 elements
+	BNE		AGAIN 
+STOP 
+	B 		STOP	
+	END

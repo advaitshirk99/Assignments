@@ -1,4 +1,4 @@
-	AREA    MYCODE, CODE, READONLY
+	AREA  MYCODE, CODE, READONLY
 		
 		ENTRY
 		EXPORT main
@@ -20,7 +20,7 @@ main
 	LDR R7, [R0, #24]
 	LDR R8, [R0, #28]
 	LDR R9, [R0, #32]
-	LDR R10, [R0, #36]
+	LDR R10,[R0, #36]
 	B 	STOP
 	
 INSERTION

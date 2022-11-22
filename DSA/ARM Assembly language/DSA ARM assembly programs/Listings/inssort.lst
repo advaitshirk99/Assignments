@@ -1,0 +1,95 @@
+
+
+
+ARM Macro Assembler    Page 1 
+
+
+    1 00000000                 AREA             prg,CODE,READONLY
+    2 00000000                 ENTRY
+    3 00000000         
+    4 00000000 E3A00101        LDR              R0,=0x40000000
+    5 00000004         
+    6 00000004         REPEAT
+    7 00000004 E1A03000        MOV              R3,R0
+    8 00000008 E3A02001        MOV              R2,#1
+    9 0000000C         AGAIN
+   10 0000000C E5D36000        LDRB             R6,[R3]
+   11 00000010 E5D37001        LDRB             R7,[R3,#1]
+   12 00000014 E1560007        CMP              R6,R7
+   13 00000018 DA000003        BLE              SKIP
+   14 0000001C         
+   15 0000001C E5C36001        STRB             R6,[R3,#1]
+   16 00000020 E5C37000        STRB             R7,[R3]
+   17 00000024 E2822001        ADD              R2,#1
+   18 00000028 EAFFFFF5 
+                       l       B                REPEAT
+   19 0000002C         
+   20 0000002C         SKIP
+   21 0000002C E2822001        ADD              R2,#1
+   22 00000030 E2833001        ADD              R3,#1
+   23 00000034 E3520005        CMP              R2,#5       ; sorting for 5 ele
+                                                            ments
+   24 00000038 1AFFFFF3        BNE              AGAIN
+   25 0000003C         STOP
+   26 0000003C EAFFFFFE        B                STOP
+   27 00000040                 END
+Command Line: --debug --xref --diag_suppress=9931 --apcs=interwork --depend=.\o
+bjects\inssort.d -o.\objects\inssort.o -IC:\Keil_v5\ARM\RV31\INC -IC:\Keil_v5\A
+RM\CMSIS\Include -IC:\Keil_v5\ARM\INC\Philips --predefine="__EVAL SETA 1" --pre
+define="__UVISION_VERSION SETA 529" --list=.\listings\inssort.lst insSort.s
+
+
+
+ARM Macro Assembler    Page 1 Alphabetic symbol ordering
+Relocatable symbols
+
+AGAIN 0000000C
+
+Symbol: AGAIN
+   Definitions
+      At line 9 in file insSort.s
+   Uses
+      At line 24 in file insSort.s
+Comment: AGAIN used once
+REPEAT 00000004
+
+Symbol: REPEAT
+   Definitions
+      At line 6 in file insSort.s
+   Uses
+      At line 18 in file insSort.s
+Comment: REPEAT used once
+SKIP 0000002C
+
+Symbol: SKIP
+   Definitions
+      At line 20 in file insSort.s
+   Uses
+      At line 13 in file insSort.s
+Comment: SKIP used once
+STOP 0000003C
+
+Symbol: STOP
+   Definitions
+      At line 25 in file insSort.s
+   Uses
+      At line 26 in file insSort.s
+Comment: STOP used once
+l 00000028
+
+Symbol: l
+   Definitions
+      At line 18 in file insSort.s
+   Uses
+      None
+Comment: l unused
+prg 00000000
+
+Symbol: prg
+   Definitions
+      At line 1 in file insSort.s
+   Uses
+      None
+Comment: prg unused
+6 symbols
+338 symbols in table
