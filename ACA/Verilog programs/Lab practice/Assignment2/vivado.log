@@ -1,0 +1,25 @@
+#-----------------------------------------------------------
+# Vivado v2019.1 (64-bit)
+# SW Build 2552052 on Fri May 24 14:49:42 MDT 2019
+# IP Build 2548770 on Fri May 24 18:01:18 MDT 2019
+# Start of session at: Wed Nov 23 14:01:41 2022
+# Process ID: 7812
+# Current directory: D:/Academic stuff/MSIS Github/Assignments/ACA/Verilog programs/Lab practice/Assignment2
+# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent22876 D:\Academic stuff\MSIS Github\Assignments\ACA\Verilog programs\Lab practice\Assignment2\Assignment2.xpr
+# Log file: D:/Academic stuff/MSIS Github/Assignments/ACA/Verilog programs/Lab practice/Assignment2/vivado.log
+# Journal file: D:/Academic stuff/MSIS Github/Assignments/ACA/Verilog programs/Lab practice/Assignment2\vivado.jou
+#-----------------------------------------------------------
+start_gui
+open_project {D:/Academic stuff/MSIS Github/Assignments/ACA/Verilog programs/Lab practice/Assignment2/Assignment2.xpr}
+INFO: [ProjectBase 1-489] The host OS only allows 260 characters in a normal path. The project is stored in a path with more than 80 characters. If you experience issues with IP, Block Designs, or files not being found, please consider moving the project to a location with a shorter path. Alternately consider using the OS subst command to map part of the path to a drive letter.
+Current project path is 'D:/Academic stuff/MSIS Github/Assignments/ACA/Verilog programs/Lab practice/Assignment2'
+INFO: [Project 1-313] Project file moved from 'D:/Advait-embedded/Xilinx-Vivado/Xilinx projects/Assignment2' since last save.
+Scanning sources...
+Finished scanning sources
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1704] No user IP repositories specified
+INFO: [IP_Flow 19-2313] Loaded Vivado IP repository 'D:/Embedded/Xilinx-Vivado/Vivado/2019.1/data/ip'.
+open_project: Time (s): cpu = 00:00:14 ; elapsed = 00:00:06 . Memory (MB): peak = 644.586 ; gain = 29.570
+update_compile_order -fileset sources_1
+exit
+INFO: [Common 17-206] Exiting Vivado at Wed Nov 23 14:30:07 2022...

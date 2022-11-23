@@ -1,0 +1,7 @@
+Running: xsim.dir/PRIORITY_ENCODER_TB_behav/xsimk.exe -simmode gui -wdb PRIORITY_ENCODER_TB_behav.wdb -simrunnum 0 -socket 60001
+Design successfully loaded
+Design Loading Memory Usage: 5880 KB (Peak: 5880 KB)
+Design Loading CPU Usage: 0 ms
+Simulation completed
+Simulation Memory Usage: 6444 KB (Peak: 6444 KB)
+Simulation CPU Usage: 15 ms

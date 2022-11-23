@@ -1,0 +1,15 @@
+Vivado Simulator 2019.1
+Copyright 1986-1999, 2001-2019 Xilinx, Inc. All Rights Reserved.
+Running: D:/Embedded/Xilinx-Vivado/Vivado/2019.1/bin/unwrapped/win64.o/xelab.exe -wto 493226a0b671410a94b7cc00ba0a9ad9 --incr --debug typical --relax --mt 2 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot MUX_16to1_tb_behav xil_defaultlib.MUX_16to1_tb xil_defaultlib.glbl -log elaborate.log 
+Using 2 slave threads.
+Starting static elaboration
+WARNING: [VRFC 10-3091] actual bit length 16 differs from formal bit length 4 for port 'a' [D:/Academic stuff/MSIS Github/Assignments/ACA/Verilog programs/Lab assignment/Assignment 2/Question2/Question2.srcs/sources_1/new/MUX_4to1.v:53]
+Completed static elaboration
+Starting simulation data flow analysis
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling module xil_defaultlib.MUX_4to1
+Compiling module xil_defaultlib.MUX_16to1
+Compiling module xil_defaultlib.MUX_16to1_tb
+Compiling module xil_defaultlib.glbl
+Built simulation snapshot MUX_16to1_tb_behav

@@ -1,0 +1,5 @@
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/Academic stuff/MSIS Github/Assignments/ACA/Verilog programs/Lab assignment/Assignment 2/Question2/Question2.srcs/sources_1/new/MUX_4to1.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module MUX_4to1
+INFO: [VRFC 10-311] analyzing module MUX_16to1
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/Academic stuff/MSIS Github/Assignments/ACA/Verilog programs/Lab assignment/Assignment 2/Question2/Question2.srcs/sources_1/new/MUX_16to1_tb.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module MUX_16to1_tb
