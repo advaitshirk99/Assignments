@@ -1,0 +1,1 @@
+WAP for copy the content of file1 and file 2 to file 3. But that file 3 has some text. 
