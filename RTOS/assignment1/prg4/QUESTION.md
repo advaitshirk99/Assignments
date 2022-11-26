@@ -1,0 +1,1 @@
+Read a text stored in a file. Count the number of words and lines in the file. Use functions.

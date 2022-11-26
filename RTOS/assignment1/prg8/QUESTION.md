@@ -1,0 +1,1 @@
+enter the values into multiple arrays and find the even , odd numbers from all arrays.

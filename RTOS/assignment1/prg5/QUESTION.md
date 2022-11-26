@@ -1,0 +1,1 @@
+Read a text file called input.txt and segregate the even (2nd,4th, 6th , 8th …) and odd (1st,3rd,5th, 7th …) words into two different files names even.txt and odd.txt. Get the names of input and output files through command line arguments.

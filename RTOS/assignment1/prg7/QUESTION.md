@@ -1,0 +1,1 @@
+input the text to file until user enters the “enter key” from the system

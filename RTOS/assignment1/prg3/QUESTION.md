@@ -1,0 +1,1 @@
+Read a string from a file. Count the number of characters in a given string without making use of the string library function. Use ‘for loop’. Get the input using ‘fscanf’. Use functions and pass string by reference.

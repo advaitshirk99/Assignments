@@ -1,0 +1,1 @@
+identify the word from file “ Manipal”, “miss”, “Udupi”, “names” and change the case of text and save to other file and vice versa 

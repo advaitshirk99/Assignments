@@ -1,0 +1,1 @@
+identify the students who scored more than 80 in all subjects ( 5 subjects with different sections/ branches)

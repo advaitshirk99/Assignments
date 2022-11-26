@@ -1,0 +1,1 @@
+Get ten numbers from user (by  using arguments, GUI). Store them in an array. Using functions, find sum, average and product of the numbers. Print the sum, average and product in the main function. 
