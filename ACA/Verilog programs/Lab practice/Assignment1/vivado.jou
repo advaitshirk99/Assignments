@@ -2,10 +2,10 @@
 # Vivado v2019.1 (64-bit)
 # SW Build 2552052 on Fri May 24 14:49:42 MDT 2019
 # IP Build 2548770 on Fri May 24 18:01:18 MDT 2019
-# Start of session at: Wed Nov 23 19:44:50 2022
-# Process ID: 23436
+# Start of session at: Thu Nov 24 14:30:22 2022
+# Process ID: 11420
 # Current directory: D:/Academic stuff/MSIS Github/Assignments/ACA/Verilog programs/Lab practice/Assignment1
-# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent25920 D:\Academic stuff\MSIS Github\Assignments\ACA\Verilog programs\Lab practice\Assignment1\assignment1.xpr
+# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent15884 D:\Academic stuff\MSIS Github\Assignments\ACA\Verilog programs\Lab practice\Assignment1\assignment1.xpr
 # Log file: D:/Academic stuff/MSIS Github/Assignments/ACA/Verilog programs/Lab practice/Assignment1/vivado.log
 # Journal file: D:/Academic stuff/MSIS Github/Assignments/ACA/Verilog programs/Lab practice/Assignment1\vivado.jou
 #-----------------------------------------------------------

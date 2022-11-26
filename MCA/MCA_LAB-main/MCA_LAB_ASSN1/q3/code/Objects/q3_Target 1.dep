@@ -1,0 +1,7 @@
+Dependencies for Project 'q3', Target 'Target 1': (DO NOT MODIFY !)
+CompilerVersion: 5060750::V5.06 update 6 (build 750)::ARMCC
+F (.\Startup.s)(0x559CFDE8)(--cpu ARM7TDMI --pd "__EVAL SETA 1" -g --apcs=interwork -IE:\Keil_V5\ARM\RV31\INC-IE:\Keil_V5\ARM\CMSIS\Include-IE:\Keil_V5\ARM\INC\Philips--pd "__UVISION_VERSION SETA 529"--list .\listings\startup.lst --xref -o .\objects\startup.o --depend .\objects\startup.d)
+F (.\main.c)(0x637ED1FA)(--c99 --gnu -c --cpu ARM7TDMI -D__EVAL -g -O0 --apcs=interwork --split_sections-IE:\Keil_V5\ARM\RV31\INC-IE:\Keil_V5\ARM\CMSIS\Include-IE:\Keil_V5\ARM\INC\Philips-D__UVISION_VERSION="529"-o .\objects\main.o --omf_browse .\objects\main.crf --depend .\objects\main.d)
+I (header.h)(0x637ECDA5)
+I (E:\Keil_V5\ARM\INC\Philips\lpc214x.h)(0x559CFE30)
+F (.\header.h)(0x637ECDA5)()

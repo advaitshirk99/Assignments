@@ -1,0 +1,51 @@
+<html>
+<body>
+<pre>
+<h1>µVision Build Log</h1>
+<h2>Tool Versions:</h2>
+IDE-Version: µVision V5.29.0.0
+Copyright (C) 2019 ARM Ltd and ARM Germany GmbH. All rights reserved.
+License Information: Aneesh Acharya, MSIS, LIC=----
+ 
+Tool Versions:
+Toolchain:       MDK-Lite  Version: 5.29.0.0
+Toolchain Path:  C:\Keil_v5\ARM\ARMCC\Bin
+C Compiler:      Armcc.exe V5.06 update 6 (build 750)
+Assembler:       Armasm.exe V5.06 update 6 (build 750)
+Linker/Locator:  ArmLink.exe V5.06 update 6 (build 750)
+Library Manager: ArmAr.exe V5.06 update 6 (build 750)
+Hex Converter:   FromElf.exe V5.06 update 6 (build 750)
+CPU DLL:         SARM.DLL V5.29.0.0
+Dialog DLL:      DARMP.DLL V1.53.0.0
+Target DLL:      UL2ARM.DLL V1.74.10.0
+Dialog DLL:      TARMP.DLL V1.53.0.0
+ 
+<h2>Project:</h2>
+D:\Aneesh\Proteus SIM file\17-oct\code\Lcd.uvproj
+Project File Date:  10/17/2022
+
+<h2>Output:</h2>
+*** Using Compiler 'V5.06 update 6 (build 750)', folder: 'C:\Keil_v5\ARM\ARMCC\Bin'
+Build target 'Target 1'
+compiling lcd.c...
+lcd.h(7): warning:  #1295-D: Deprecated declaration lcd_int - give arg types
+  void lcd_int();
+lcd.h(12): warning:  #1295-D: Deprecated declaration test1 - give arg types
+  void test1();
+lcd.h(13): warning:  #1295-D: Deprecated declaration test2 - give arg types
+  void test2();
+lcd.h(14): warning:  #1295-D: Deprecated declaration test3 - give arg types
+  void test3();
+lcd.c(62): warning:  #167-D: argument of type "char *" is incompatible with parameter of type "unsigned char *"
+  		int c=check_palindrome(str);
+lcd.c(104): warning:  #1-D: last line of file ends without a newline
+  	}
+lcd.c: 6 warnings, 0 errors
+linking...
+Program Size: Code=928 RO-data=16 RW-data=0 ZI-data=1256  
+FromELF: creating hex file...
+".\Objects\Lcd.axf" - 0 Error(s), 6 Warning(s).
+Build Time Elapsed:  00:00:01
+</pre>
+</body>
+</html>

@@ -431,6 +431,11 @@
               <FileType>1</FileType>
               <FilePath>.\main.c</FilePath>
             </File>
+            <File>
+              <FileName>functions.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>.\functions.h</FilePath>
+            </File>
           </Files>
         </Group>
       </Groups>
