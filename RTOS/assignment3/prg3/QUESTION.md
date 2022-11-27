@@ -1,0 +1,1 @@
+WAP for parent receives N numbers and child find the sum of these and result displayed by child 

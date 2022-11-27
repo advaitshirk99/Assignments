@@ -1,0 +1,1 @@
+Create  one parent and one child process and display  in each process as “ I am parent “ and “I am child” 

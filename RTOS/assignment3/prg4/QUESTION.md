@@ -1,0 +1,1 @@
+WAP for parent writes into file as “ I am in manipal enjoying the environment of manipal.. and MSIS campus is very nice” let the child creates one more file and  writes as “ I am student of MSIS. And I am good” let both content of file displayed by process 
