@@ -37,7 +37,7 @@ void segregate_words(char arr[], FILE* ptr, char *argv[]){
 	int word_count=0;
 	
 	FILE* even_file;
-        FILE* odd_file;
+    FILE* odd_file;
  
  	even_file = fopen(argv[3], "w");
 	odd_file = fopen(argv[2], "w");

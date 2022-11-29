@@ -1,1 +1,1 @@
-Implement FCFS , SJFS scheduling algorithm. Priority based algorithm. Let parent says about no. of processes and child find the AVG Waiting time and Avt turnaround time  displays to console. 
+Implement FCFS , SJFS scheduling algorithm. Priority based algorithm. Let parent says about no. of processes and child find the AVG Waiting time and Avt turnaround time  displays to console.

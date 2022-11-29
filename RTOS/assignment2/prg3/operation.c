@@ -23,7 +23,7 @@ void compare_lines(char source1[], char source2[]){
         while(!feof(src2)){
             fgets(buffer2, MAX_LINE_LENGTH, src2);
 
-            if((strcmp(buffer1, buffer2))==0){
+            if((strcmp(buffer1, buffer2))!=0){
                 printf(buffer1);
                 printf(buffer2);
             }
