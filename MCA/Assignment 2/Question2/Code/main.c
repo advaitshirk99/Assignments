@@ -3,23 +3,22 @@
 #include "pll.h"
 #define bit(x) 1<<x
 
-int main(){
+int main(){ 
 	init_pll();
-	PINSEL0 = 0x0;
-	PINSEL1 = 0x0;
-	PINSEL2 = 0x0;
-	IODIR0 = 0xFFFFF;
-	IODIR1 = 0x0;
-	while(1){
-		if((IOPIN1 & (1<<16)) == 0){
-			IOSET0 |= 0xFFFFF;
-			delay_milliseconds(100);
-			IOCLR0 |= 0xFFFFF;
+	IODIR0 = 0x4;
+	while(1){ 
+		if((IO0PIN && (1<<0)) == 0){ 
+			IOSET0 |= (1<<2);
+			delay_milliseconds(1000);
+			IOCLR0 |= (1<<2);
+			delay_milliseconds(1000);
 		}
-		else{
-			IOSET0 |= 0xFFFFF;
-			delay_milliseconds(50);
-			IOCLR0 |= 0xFFFFF;			
+		else
+		{ IOSET0 |= (1<<2);
+			delay_milliseconds(500);
+			IOCLR0 |= (1<<2);
+			delay_milliseconds(500);
 		}
 	}
+ return 0;
 }
