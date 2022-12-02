@@ -1,0 +1,14 @@
+#-----------------------------------------------------------
+# Webtalk v2019.1 (64-bit)
+# SW Build 2552052 on Fri May 24 14:49:42 MDT 2019
+# IP Build 2548770 on Fri May 24 18:01:18 MDT 2019
+# Start of session at: Mon Nov 28 13:48:02 2022
+# Process ID: 8220
+# Current directory: D:/LAB/ACA/Assignment 3/project_5/project_5.sim/sim_1/behav/xsim
+# Command line: wbtcv.exe -mode batch -source D:/LAB/ACA/Assignment 3/project_5/project_5.sim/sim_1/behav/xsim/xsim.dir/seq_detector_moore_tb_behav/webtalk/xsim_webtalk.tcl -notrace
+# Log file: D:/LAB/ACA/Assignment 3/project_5/project_5.sim/sim_1/behav/xsim/webtalk.log
+# Journal file: D:/LAB/ACA/Assignment 3/project_5/project_5.sim/sim_1/behav/xsim\webtalk.jou
+#-----------------------------------------------------------
+source D:/LAB/ACA/Assignment -notrace
+couldn't read file "D:/LAB/ACA/Assignment": permission denied
+INFO: [Common 17-206] Exiting Webtalk at Mon Nov 28 13:48:02 2022...

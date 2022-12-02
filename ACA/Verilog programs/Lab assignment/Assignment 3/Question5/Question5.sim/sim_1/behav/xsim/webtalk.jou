@@ -1,0 +1,12 @@
+#-----------------------------------------------------------
+# Webtalk v2019.1 (64-bit)
+# SW Build 2552052 on Fri May 24 14:49:42 MDT 2019
+# IP Build 2548770 on Fri May 24 18:01:18 MDT 2019
+# Start of session at: Fri Dec  2 10:55:29 2022
+# Process ID: 9540
+# Current directory: D:/Academic stuff/MSIS Github/Assignments/ACA/Verilog programs/Lab assignment/Assignment 3/Question5/Question5.sim/sim_1/behav/xsim
+# Command line: wbtcv.exe -mode batch -source D:/Academic stuff/MSIS Github/Assignments/ACA/Verilog programs/Lab assignment/Assignment 3/Question5/Question5.sim/sim_1/behav/xsim/xsim.dir/seq_detector_moore_tb_behav/webtalk/xsim_webtalk.tcl -notrace
+# Log file: D:/Academic stuff/MSIS Github/Assignments/ACA/Verilog programs/Lab assignment/Assignment 3/Question5/Question5.sim/sim_1/behav/xsim/webtalk.log
+# Journal file: D:/Academic stuff/MSIS Github/Assignments/ACA/Verilog programs/Lab assignment/Assignment 3/Question5/Question5.sim/sim_1/behav/xsim\webtalk.jou
+#-----------------------------------------------------------
+source D:/Academic -notrace
