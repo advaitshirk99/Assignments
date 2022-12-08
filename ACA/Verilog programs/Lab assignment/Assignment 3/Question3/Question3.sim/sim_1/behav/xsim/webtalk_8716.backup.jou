@@ -1,0 +1,12 @@
+#-----------------------------------------------------------
+# Webtalk v2019.1 (64-bit)
+# SW Build 2552052 on Fri May 24 14:49:42 MDT 2019
+# IP Build 2548770 on Fri May 24 18:01:18 MDT 2019
+# Start of session at: Mon Nov 28 12:10:08 2022
+# Process ID: 8716
+# Current directory: D:/LAB/ACA/Assignment 3/project_3/project_3.sim/sim_1/behav/xsim
+# Command line: wbtcv.exe -mode batch -source D:/LAB/ACA/Assignment 3/project_3/project_3.sim/sim_1/behav/xsim/xsim.dir/mod7_counter_tb_behav/webtalk/xsim_webtalk.tcl -notrace
+# Log file: D:/LAB/ACA/Assignment 3/project_3/project_3.sim/sim_1/behav/xsim/webtalk.log
+# Journal file: D:/LAB/ACA/Assignment 3/project_3/project_3.sim/sim_1/behav/xsim\webtalk.jou
+#-----------------------------------------------------------
+source D:/LAB/ACA/Assignment -notrace
