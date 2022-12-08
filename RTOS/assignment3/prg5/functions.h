@@ -67,10 +67,10 @@ int min(process_data p[], int choice, int i){
 	}
 }
 
-void input_pdata(process_data p){
-	printf("Enter the arrival time of this process: ");
+void input_pdata(process_data p, int i){
+	printf("Enter the arrival time of process P%d: ", i);
 	scanf("%d", &(p.arrival_time));
-	printf("Enter the burst cycle of this process: ");
+	printf("Enter the burst cycle of process%d: ", i);
 	scanf("%d", &(p.burst_cycle));
 }
 
