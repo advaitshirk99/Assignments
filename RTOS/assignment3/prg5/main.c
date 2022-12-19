@@ -9,7 +9,7 @@ int main(){
 	scanf("%d", &total);
 	process_data process[total];
 	for(i=0; i<total; i++){
-		input_pdata(process[i]);
+		input_pdata(process[i], i);
 	}
 	int split = fork();
 	if(split == 0){
@@ -19,6 +19,6 @@ int main(){
 		total_wt +=	process[i].waiting_time;
 		total_tt += process[i].turn_around_time;  
 	}
-	printf("FOR FCFS:\nAverage waiting time: %d\nAverage turnaround time: %d\n",(total_wt/(float)total), (total_tt/(float)total));
+	printf("FOR FCFS:\nAverage waiting time: %0.2f\nAverage turnaround time: %0.2f\n",(total_wt/(float)total), (total_tt/(float)total));
 
 }
