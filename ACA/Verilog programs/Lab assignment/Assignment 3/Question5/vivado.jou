@@ -1,0 +1,14 @@
+#-----------------------------------------------------------
+# Vivado v2019.1 (64-bit)
+# SW Build 2552052 on Fri May 24 14:49:42 MDT 2019
+# IP Build 2548770 on Fri May 24 18:01:18 MDT 2019
+# Start of session at: Thu Jan 12 19:45:07 2023
+# Process ID: 10884
+# Current directory: D:/Academic stuff/MSIS Github/Assignments/ACA/Verilog programs/Lab assignment/Assignment 3/Question5
+# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent19440 D:\Academic stuff\MSIS Github\Assignments\ACA\Verilog programs\Lab assignment\Assignment 3\Question5\Question5.xpr
+# Log file: D:/Academic stuff/MSIS Github/Assignments/ACA/Verilog programs/Lab assignment/Assignment 3/Question5/vivado.log
+# Journal file: D:/Academic stuff/MSIS Github/Assignments/ACA/Verilog programs/Lab assignment/Assignment 3/Question5\vivado.jou
+#-----------------------------------------------------------
+start_gui
+open_project {D:/Academic stuff/MSIS Github/Assignments/ACA/Verilog programs/Lab assignment/Assignment 3/Question5/Question5.xpr}
+update_compile_order -fileset sources_1

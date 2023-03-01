@@ -121,9 +121,9 @@ Section Cross References
 Removing Unused input sections from the image.
 
     Removing startup.o(RESET), (272 bytes).
-    Removing timer.o(i.delay_microseconds), (80 bytes).
+    Removing timer.o(i.delay_microseconds), (84 bytes).
 
-2 unused section(s) (total 352 bytes) removed from the image.
+2 unused section(s) (total 356 bytes) removed from the image.
 
 ==============================================================================
 
@@ -249,8 +249,8 @@ Image Symbol Table
     .text                                    0x000001a0   Section        4  use_no_semi.o(.text)
     .text                                    0x000001a4   Section        0  indicate_semi.o(.text)
     i.delay_milliseconds                     0x000001a4   Section        0  timer.o(i.delay_milliseconds)
-    i.init_pll                               0x000001f8   Section        0  pll.o(i.init_pll)
-    i.main                                   0x00000260   Section        0  main.o(i.main)
+    i.init_pll                               0x00000204   Section        0  pll.o(i.init_pll)
+    i.main                                   0x0000026c   Section        0  main.o(i.main)
     .bss                                     0x40000000   Section       96  libspace.o(.bss)
     HEAP                                     0x40000060   Section        0  startup.o(HEAP)
     STACK                                    0x40000060   Section     1160  startup.o(STACK)
@@ -355,11 +355,11 @@ Image Symbol Table
     __I$use$semihosting                      0x000001a0   ARM Code       0  use_no_semi.o(.text)
     __use_no_semihosting_swi                 0x000001a0   ARM Code       4  use_no_semi.o(.text)
     __semihosting_library_function           0x000001a4   ARM Code       0  indicate_semi.o(.text)
-    delay_milliseconds                       0x000001a4   ARM Code      76  timer.o(i.delay_milliseconds)
-    init_pll                                 0x000001f8   ARM Code     100  pll.o(i.init_pll)
-    main                                     0x00000260   ARM Code     176  main.o(i.main)
-    Region$$Table$$Base                      0x00000314   Number         0  anon$$obj.o(Region$$Table)
-    Region$$Table$$Limit                     0x00000324   Number         0  anon$$obj.o(Region$$Table)
+    delay_milliseconds                       0x000001a4   ARM Code      88  timer.o(i.delay_milliseconds)
+    init_pll                                 0x00000204   ARM Code     100  pll.o(i.init_pll)
+    main                                     0x0000026c   ARM Code     160  main.o(i.main)
+    Region$$Table$$Base                      0x00000310   Number         0  anon$$obj.o(Region$$Table)
+    Region$$Table$$Limit                     0x00000320   Number         0  anon$$obj.o(Region$$Table)
     __libspace_start                         0x40000000   Data          96  libspace.o(.bss)
     __temporary_stack_top$libspace           0x40000060   Data           0  libspace.o(.bss)
 
@@ -371,9 +371,9 @@ Memory Map of the image
 
   Image Entry point : 0x00000000
 
-  Load Region LR_1 (Base: 0x00000000, Size: 0x00000324, Max: 0xffffffff, ABSOLUTE)
+  Load Region LR_1 (Base: 0x00000000, Size: 0x00000320, Max: 0xffffffff, ABSOLUTE)
 
-    Execution Region ER_RO (Exec base: 0x00000000, Load base: 0x00000000, Size: 0x00000324, Max: 0xffffffff, ABSOLUTE)
+    Execution Region ER_RO (Exec base: 0x00000000, Load base: 0x00000000, Size: 0x00000320, Max: 0xffffffff, ABSOLUTE)
 
     Exec Addr    Load Addr    Size         Type   Attr      Idx    E Section Name        Object
 
@@ -436,18 +436,18 @@ Memory Map of the image
     0x00000194   0x00000194   0x0000000c   Code   RO          150    .text               c_t.l(sys_exit.o)
     0x000001a0   0x000001a0   0x00000004   Code   RO          161    .text               c_t.l(use_no_semi.o)
     0x000001a4   0x000001a4   0x00000000   Code   RO          163    .text               c_t.l(indicate_semi.o)
-    0x000001a4   0x000001a4   0x00000054   Code   RO           28    i.delay_milliseconds  timer.o
-    0x000001f8   0x000001f8   0x00000068   Code   RO           11    i.init_pll          pll.o
-    0x00000260   0x00000260   0x000000b4   Code   RO           45    i.main              main.o
-    0x00000314   0x00000314   0x00000010   Data   RO          218    Region$$Table       anon$$obj.o
+    0x000001a4   0x000001a4   0x00000060   Code   RO           28    i.delay_milliseconds  timer.o
+    0x00000204   0x00000204   0x00000068   Code   RO           11    i.init_pll          pll.o
+    0x0000026c   0x0000026c   0x000000a4   Code   RO           45    i.main              main.o
+    0x00000310   0x00000310   0x00000010   Data   RO          218    Region$$Table       anon$$obj.o
 
 
-    Execution Region ER_RW (Exec base: 0x40000000, Load base: 0x00000324, Size: 0x00000000, Max: 0xffffffff, ABSOLUTE)
+    Execution Region ER_RW (Exec base: 0x40000000, Load base: 0x00000320, Size: 0x00000000, Max: 0xffffffff, ABSOLUTE)
 
     **** No section assigned to this execution region ****
 
 
-    Execution Region ER_ZI (Exec base: 0x40000000, Load base: 0x00000324, Size: 0x000004e8, Max: 0xffffffff, ABSOLUTE)
+    Execution Region ER_ZI (Exec base: 0x40000000, Load base: 0x00000320, Size: 0x000004e8, Max: 0xffffffff, ABSOLUTE)
 
     Exec Addr    Load Addr    Size         Type   Attr      Idx    E Section Name        Object
 
@@ -463,13 +463,13 @@ Image component sizes
 
       Code (inc. data)   RO Data    RW Data    ZI Data      Debug   Object Name
 
-       180          4          0          0          0        471   main.o
+       164          4          0          0          0        459   main.o
        104          4          0          0          0       1871   pll.o
         32         12          0          0       1160        280   startup.o
-        84          8          0          0          0        485   timer.o
+        96          8          0          0          0        493   timer.o
 
     ----------------------------------------------------------------------
-       400         28         16          0       1160       3107   Object Totals
+       396         28         16          0       1160       3103   Object Totals
          0          0         16          0          0          0   (incl. Generated)
          0          0          0          0          0          0   (incl. Padding)
 
@@ -517,15 +517,15 @@ Image component sizes
 
       Code (inc. data)   RO Data    RW Data    ZI Data      Debug   
 
-       788         48         16          0       1256       3559   Grand Totals
-       788         48         16          0       1256       3559   ELF Image Totals
-       788         48         16          0          0          0   ROM Totals
+       784         48         16          0       1256       3555   Grand Totals
+       784         48         16          0       1256       3555   ELF Image Totals
+       784         48         16          0          0          0   ROM Totals
 
 ==============================================================================
 
-    Total RO  Size (Code + RO Data)                  804 (   0.79kB)
+    Total RO  Size (Code + RO Data)                  800 (   0.78kB)
     Total RW  Size (RW Data + ZI Data)              1256 (   1.23kB)
-    Total ROM Size (Code + RO Data + RW Data)        804 (   0.79kB)
+    Total ROM Size (Code + RO Data + RW Data)        800 (   0.78kB)
 
 ==============================================================================
 

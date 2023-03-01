@@ -2,6 +2,7 @@
 #include<stdlib.h>
 #include "pll.h"
 #include "uart.h"
+
 int isArmstrong(int num){
 	  int originalNum, remainder, result=0;
 		originalNum= num;
@@ -38,12 +39,14 @@ int main(){
 			while(str2[j] != '\0'){
 				transmit_char_uart0(str2[j++]);
 			}
+			transmit_char_uart0('\n');
 			j=0;
 		}
 		else if(isArmstrong(num) == 0){
 			while(str1[j] != '\0'){
 				transmit_char_uart0(str1[j++]);
 			}
+			transmit_char_uart0('\n');
 			j=0;
 		}
 	}
