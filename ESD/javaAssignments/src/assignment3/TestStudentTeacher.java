@@ -23,5 +23,4 @@ public class TestStudentTeacher {
 		assert(student.getAverageGrade() == 8.0);
 		System.out.println(student);
 	}
-
 }
